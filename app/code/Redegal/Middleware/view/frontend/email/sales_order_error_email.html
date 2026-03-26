@@ -1,0 +1,26 @@
+<!--@subject {{trans "[NUTRISA-%env] Error al enviar un pedido al middleware (%orderId) - (%date)" env=$env date=$date orderId=$orderId}} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<div class="sales-order-error">
+    <p>{{trans "Se ha producido un error al tratar de enviar el pedido (%orderId) - (%date) del cliente con email %customer" date=$date orderId=$orderId customer=$customerEmail}}</p>
+</div>
+<div class="sales-order-error-json">
+    <div style="margin-bottom: 30px;">
+        <div class="" style="font-weight: bold;">Request:</div>
+        <div class="">Email: {{trans "%customer" customer=$customerEmail}}</div>
+        <div class="">Fecha: {{trans "%date" date=$date}}</div>
+    </div>
+
+    <div style="margin-bottom: 30px;">
+        <div class="" style="font-weight: bold;">Response:</div>
+        <div class="">Mensaje: {{trans "%errorMessage" errorMessage=$errorMessage}}</div>
+    </div>
+
+    <div style="margin-bottom: 30px;">
+        <div class="" style="font-weight: bold;">Raw Response:</div>
+        <div class="">{{var fileContent|raw}}</div>
+    </div>
+</div>
+
+{{template config_path="design/email/footer_template"}}

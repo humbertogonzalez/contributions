@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2018 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="inventory_balance_stock_update" instance="Redegal\Middleware\Cron\UpdateStock" method="execute">
+            <schedule>0 */3 * * *</schedule>
+        </job>
+        <job name="sales_order_sender" instance="Redegal\Middleware\Cron\SendOrders" method="execute">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>

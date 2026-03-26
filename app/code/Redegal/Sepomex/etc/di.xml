@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Redegal\Sepomex\Api\SepomexRepositoryInterface" type="Redegal\Sepomex\Model\SepomexRepository"/>
+	<preference for="Redegal\Sepomex\Api\Data\SepomexInterface" type="Redegal\Sepomex\Model\Sepomex"/>
+	<preference for="Redegal\Sepomex\Api\Data\SepomexSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Redegal\Sepomex\Model\ResourceModel\Sepomex\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">redegal_sepomex_sepomex</argument>
+			<argument name="resourceModel" xsi:type="string">Redegal\Sepomex\Model\ResourceModel\Sepomex\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="redegal_sepomex_sepomex_grid_data_source" xsi:type="string">Redegal\Sepomex\Model\ResourceModel\Sepomex\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

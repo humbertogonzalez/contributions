@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.cart.totals">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-totals" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="tax" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="componentDisabled" xsi:type="boolean">true</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="disable_fields"
+                    template="Redegal_Sepomex::checkout/fields.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="checkout.cart.shipping">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-summary" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="block-shipping" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="address-fieldsets" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="country_id" xsi:type="array">
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="disabled" xsi:type="string">disabled</item>
+                                                    </item>
+                                                </item>
+                                                <item name="postcode" xsi:type="array">
+                                                    <!-- post-code field has custom UI component -->
+                                                    <item name="component" xsi:type="string">Redegal_Sepomex/js/view/element/post-code</item>
+                                                     <item name="config" xsi:type="array">
+                                                        <item name="elementTmpl" xsi:type="string">Redegal_Sepomex/element/postcode</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

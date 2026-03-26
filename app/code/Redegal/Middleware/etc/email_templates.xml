@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="sales_order_error_email_template"
+        type="html"
+        area="frontend"
+        label="Email with middleware sales order error"
+        module="Redegal_Middleware"
+        file="sales_order_error_email.html"
+    />
+
+    <template id="middleware_error_email_template"
+        type="html"
+        area="frontend"
+        label="Email with middleware error"
+        module="Redegal_Middleware"
+        file="middleware_error_email.html"
+    />
+</config>

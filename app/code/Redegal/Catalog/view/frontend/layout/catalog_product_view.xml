@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.overview" remove="true"/>
+        <referenceBlock name="product.info.description" remove="true"/>
+        
+        <referenceContainer name="product.info.main">
+            <container name="product.info.extras" htmlTag="div" htmlClass="product-view__extras">
+               <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.manufacturer" as="manufacturer" template="Magento_Catalog::product/view/attribute.phtml" after="product.price.final">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getManufacturer</argument>
+                        <argument name="at_code" xsi:type="string">manufacturer</argument>
+                        <argument name="at_type" xsi:type="string">text</argument>
+                        <argument name="css_class" xsi:type="string">manufacturer</argument>
+                        <argument name="at_label" xsi:type="string" translate="true">Manufacturer</argument>
+                        <argument name="title" translate="true" xsi:type="string">none</argument>
+                        <argument name="sort_order" xsi:type="string">10</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.presentation" as="presentation" template="Magento_Catalog::product/view/attribute.phtml" after="manufacturer">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getPresentation</argument>
+                        <argument name="at_code" xsi:type="string">presentation</argument>
+                        <argument name="css_class" xsi:type="string">presentation</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="title" translate="true" xsi:type="string">none</argument>
+                        <argument name="sort_order" xsi:type="string">30</argument>
+                    </arguments>
+                </block>
+           </container>
+            <block class="Redegal\Catalog\Block\Product\View\ProductCertifications" name="product.certifications" as="certifications"
+                template="Redegal_Catalog::product/view/certifications.phtml">
+            </block>
+        </referenceContainer>
+        <referenceContainer name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.descriptions" as="descriptions" template="Redegal_Catalog::product/view/descriptions.phtml" before="nutrimentalTable" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Description</argument>
+                    <argument name="sort_order" xsi:type="string">10</argument>
+                    <argument name="class" translate="true" xsi:type="string">descriptions</argument>
+                </arguments>
+            </block>
+            <block class="Redegal\Catalog\Block\Product\View\NutrimentalTable" name="product.nutrimentalTable" as="nutrimentalTable"
+                template="Redegal_Catalog::product/view/nutrimental_table.phtml" after="product.info.description" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Tabla nutrimental</argument>
+                    <argument name="sort_order" xsi:type="string">20</argument>
+                    <argument name="class" translate="true" xsi:type="string">attributes</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        
+        <move element="product.info.extras" destination="product.info.main" after="product.info.price" />
+    </body>
+</page>

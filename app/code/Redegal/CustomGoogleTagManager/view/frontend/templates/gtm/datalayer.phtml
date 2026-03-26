@@ -1,0 +1,46 @@
+<?php
+$helper = $this->helper('Redegal\CustomGoogleTagManager\Helper\Data');
+$cookie = $helper->getCookieData();
+$login = $helper->isCustomerIsLogged();
+if (!empty($cookie)): ?>
+<?php
+    $userId = $cookie->userID;
+    $registerDate = date("d/m/Y", strtotime($cookie->register_date));
+    $newsletter = $cookie->newsletter;
+?>
+<script>
+    dataLayer = [{
+        'userID': '<?= $userId ?>',
+        'register_date': '<?= $registerDate ?>',
+        'newsletter_suscribe': '<?= $newsletter ?>',
+        'login': '<?= $login ?>',
+    }];
+</script>
+<script>
+window.dataLayer.push({
+'event': 'User ID',
+'userID': '<?= $userId ?>',
+'register_date': '<?= $registerDate ?>',
+'newsletter_suscribe': '<?= $newsletter ?>',
+'login': '<?= $login ?>',
+});
+</script>
+<?php else: ?>
+    <script>
+        dataLayer = [{
+            'userID': '',
+            'register_date': '',
+            'newsletter_suscribe': 'No',
+            'login': '<?= $login ?>',
+        }];
+    </script>
+    <script>
+        window.dataLayer.push({
+            'event': 'User ID',
+            'userID': '',
+            'register_date': '',
+            'newsletter_suscribe': 'No',
+            'login': '<?= $login ?>',
+        });
+    </script>
+<?php endif; ?>

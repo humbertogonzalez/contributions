@@ -1,0 +1,29 @@
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+?>
+
+<?php if ($_attributeValue = $_helper->productAttribute($_product, $_product->getDescription(), 'description')) :?>
+    <div class="product attribute description" style="margin-bottom: 20px;">
+        <h3 class="title" style="color: #707070;"><?= __('Description')  ?>.</h3>
+        <div class="value"><?= /* @noEscape */ $_attributeValue ?></div>
+    </div>
+<?php endif; ?>
+
+<?php if ($_attributeValue = $_helper->productAttribute($_product, $_product->getIngredients(), 'ingredients')) :?>
+    <div class="product attribute ingredients" style="margin-bottom: 20px;">
+        <h3 class="title" style="color: #707070;"><?= __('Ingredients')  ?>.</h3>
+        <div class="value"><?= /* @noEscape */ $_attributeValue ?></div>
+    </div>
+<?php endif; ?>
+
+<?php if ($_attributeValue = $_helper->productAttribute($_product, $_product->getAllergens(), 'allergens')) :?>
+    <div class="product attribute allergens">
+        <h3 class="title" style="color: #707070;"><?= __('Leyenda precautoria')  ?>.</h3>
+        <div class="value"><?= /* @noEscape */ $_attributeValue ?></div>
+    </div>
+<?php endif; ?>

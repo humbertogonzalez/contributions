@@ -1,0 +1,34 @@
+<?php if ($nutrimentalTable = $block->getNutrimentalTable()) :?>
+        <table class="table table--highlight" id="product-attribute-specs-table">
+            <tbody>
+                <tr role="row">
+                    <?php foreach ($nutrimentalTable['headers'] as $_data) :?>
+                        <th
+                            scope="row"
+                            role="rowheader"
+                        >
+                            <?= $block->escapeHtml($_data) ?>
+                        </th>
+                    <?php endforeach; ?>
+                </tr>
+                <?php foreach ($nutrimentalTable['table'] as $label => $data) :?>
+                    <tr role="row">
+                        <th
+                            scope="row"
+                            role="rowheader"
+                        >
+                            <?= $block->escapeHtml($label) ?>
+                        </th>
+                        <?php foreach ($data as $amount) :?>
+                            <td
+                                scope="row"
+                                data-th="<?= $block->escapeHtml($label) ?>"
+                            >
+                                <?= $block->escapeHtml($amount) ?>
+                            </td>
+                        <?php endforeach; ?>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+<?php endif;?>

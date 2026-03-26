@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="middleware_test_command" xsi:type="object">Redegal\Middleware\Console\Command\MiddlewareTestCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Redegal\Middleware\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+            <argument name="fileName" xsi:type="string">/var/log/middleware.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Redegal\Middleware\Logger\MiddlewareLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">Middleware</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Redegal\Middleware\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    
+    <type name="Redegal\Middleware\Cron\SendOrders">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Cron\UpdateStock">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    
+    <type name="Redegal\Middleware\Console\Command\MiddlewareTestCommand">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    
+    <type name="Redegal\Middleware\Model\Repository\InventoryBalanceMiddlewareRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Repository\InventoryBalanceOrderMiddlewareRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Repository\InventoryBalanceOrderMiddlewareRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Repository\MiddlewareRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Repository\SessionAwareMiddlewareRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    
+    <type name="Redegal\Middleware\Model\Repository\Factory\MiddlewareClientFactory">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Repository\Factory\MiddlewareRepositoryFactory">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+    <type name="Redegal\Middleware\Model\Client\Rest\RestClientFactory">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Redegal\Middleware\Model\Client\Rest\RestClient">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Redegal\Middleware\Pugin\OrderPlugin">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Redegal\Middleware\Observer\BeforeQuoteSubmitObserver">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redegal\Middleware\Logger\MiddlewareLogger</argument>
+        </arguments>
+    </type>
+</config>

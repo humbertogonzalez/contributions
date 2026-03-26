@@ -1,0 +1,15 @@
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+       $('body').mouseover(function () {
+           $('select[name="region_id"]').attr("style", "pointer-events: none;");
+           $('input[name="city"]').attr("readonly","readonly");
+       });
+
+       $('body').on('touchstart', function () {
+           $('select[name="region_id"]').attr("style", "pointer-events: none;");
+           $('input[name="city"]').attr("readonly","readonly");
+       });
+    });
+</script>

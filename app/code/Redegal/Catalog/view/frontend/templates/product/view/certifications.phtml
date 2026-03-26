@@ -1,0 +1,12 @@
+<?php if ($certifications = $block->getProductCertificationsImages()) :?>
+    <div class="product-view__certifications">
+        <p class="product-view__certifications-title"><?= __('Certificaciones del producto'); ?></p>
+        <ul class="product-view__certifications-list">
+            <?php foreach ($certifications as $image) :?>
+                <li class="product-view__certifications-item">
+                    <img class="product-view__certifications-icon" src="<?php echo $this->getViewFileUrl('Redegal_Catalog::images/'.$image); ?>" alt="" />
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif;?>

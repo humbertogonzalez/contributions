@@ -1,0 +1,20 @@
+{
+  "name": "redegal/custom-google-tag-manager",
+  "version": "1.0.0",
+  "description": "Customization of Google Tag Manager",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Redegal\\CustomGoogleTagManager\\": ""
+    }
+  }
+}
