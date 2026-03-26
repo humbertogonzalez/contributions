@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="balloongroup" translate="label" sortOrder="200">
+            <label>Balloon Group</label>
+        </tab>
+        <section id="configurations" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Configurations</label>
+            <tab>balloongroup</tab>
+            <resource>BalloonGroup_Configurations::config</resource>
+            <group id="whatsapp" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Whatsapp</label>
+                <field id="telephone" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Telephone</label>
+                </field>
+            </group>
+            <group id="integration" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Reindex Schedule For Integrations</label>
+                <field id="cron_expression" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cron Expression</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

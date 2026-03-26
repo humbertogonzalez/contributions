@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="amasty_company_account_company" resource="default" engine="innodb" comment="Company Table">
+        <column xsi:type="varchar" name="company_name" nullable="true" length="100" comment="Company Name"/>
+        <column xsi:type="varchar" name="legal_name" nullable="true" length="100" comment="Legal Name"/>
+    </table>
+    <table name="admin_user" resource="default" engine="innodb" comment="Admin User Table">
+        <column xsi:type="varchar" name="seller_id" nullable="true" length="40" comment="Seller ID"/>
+        <constraint xsi:type="unique" referenceId="ADMIN_USER_SELLER_ID">
+            <column name="seller_id"/>
+        </constraint>
+    </table>
+</schema>

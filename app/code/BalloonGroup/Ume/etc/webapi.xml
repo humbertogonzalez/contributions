@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/balloongroup-ume/ume" method="POST">
+        <service class="BalloonGroup\Ume\Api\UmeRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="BalloonGroup_Ume::Ume_save"/>
+        </resources>
+    </route>
+    <route url="/V1/balloongroup-ume/ume/search" method="GET">
+        <service class="BalloonGroup\Ume\Api\UmeRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="BalloonGroup_Ume::Ume_view"/>
+        </resources>
+    </route>
+    <route url="/V1/balloongroup-ume/ume/:umeId" method="GET">
+        <service class="BalloonGroup\Ume\Api\UmeRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="BalloonGroup_Ume::Ume_view"/>
+        </resources>
+    </route>
+    <route url="/V1/balloongroup-ume/ume/:umeId" method="PUT">
+        <service class="BalloonGroup\Ume\Api\UmeRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="BalloonGroup_Ume::Ume_update"/>
+        </resources>
+    </route>
+    <route url="/V1/balloongroup-ume/ume/:umeId" method="DELETE">
+        <service class="BalloonGroup\Ume\Api\UmeRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="BalloonGroup_Ume::Ume_delete"/>
+        </resources>
+    </route>
+</routes>

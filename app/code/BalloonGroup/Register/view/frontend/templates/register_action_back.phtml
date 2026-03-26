@@ -1,0 +1,26 @@
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \BalloonGroup\Register\Block\Register $block */
+/** @var $escaper \Magento\Framework\Escaper */
+?>
+<div class="register-action-back">
+    <a class="action back">
+        <img src="<?= $escaper->escapeUrl($block->getViewFileUrl('images/arrow-back.png'))?>" alt="<?= $escaper->escapeHtml(__('Back')) ?>"/>
+    </a>
+</div>
+
+<script>
+    require([
+        'Magento_Ui/js/lib/view/utils/async'
+    ], function($){
+        'use strict';
+
+        $.async('.register-action-back', document.getElementById('html-body'), () => {
+            $('.register-action-back .action').on('click', () => {
+            window.location = window.baseURL + 'customer/account/login';
+            })
+        })
+    })
+</script>

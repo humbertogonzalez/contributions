@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="BalloonGroup\UploadInvoiceApi\Api\UploadInvoiceRepositoryInterface" type="BalloonGroup\UploadInvoiceApi\Model\UploadInvoiceRepository"/>
+	<preference for="BalloonGroup\UploadInvoiceApi\Api\Data\UploadInvoiceInterface" type="BalloonGroup\UploadInvoiceApi\Model\UploadInvoice"/>
+	<preference for="BalloonGroup\UploadInvoiceApi\Api\Data\UploadInvoiceSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="BalloonGroup\UploadInvoiceApi\Model\ResourceModel\UploadInvoice\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">dimagraf_invoice_management</argument>
+			<argument name="resourceModel" xsi:type="string">BalloonGroup\UploadInvoiceApi\Model\ResourceModel\UploadInvoice\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="balloongroup_uploadinvoiceapi_upload_invoice_listing_data_source" xsi:type="string">BalloonGroup\UploadInvoiceApi\Model\ResourceModel\UploadInvoice\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

@@ -1,0 +1,19 @@
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \BalloonGroup\Register\Block\Success $block */
+/** @var $escaper \Magento\Framework\Escaper */
+?>
+<div class="register-success-page">
+    <img src="<?= $escaper->escapeUrl($block->getViewFileUrl('images/check-circle.png'))?>" alt="<?= $escaper->escapeHtml(__('Check')) ?>"/>
+
+    <span class="success-title"><?= $block->escapeHtml(__('Form successfully completed')); ?></span>
+    <span class="success-msg"><?= $block->escapeHtml(__('Thank you for completing the form. We will get in touch with you soon via email.')); ?></span>
+
+    <div class="primary">
+        <a href="<?= $block->escapeUrl($block->getUrl('')) ?>" class="action primary submit">
+            <span><?= $block->escapeHtml(__('Back to home')); ?></span>
+        </a>
+    </div>
+</div>

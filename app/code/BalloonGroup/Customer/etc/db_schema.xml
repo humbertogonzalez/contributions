@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_group" resource="default" engine="innodb" comment="Customer Group Table">
+        <column name="customer_group_code" xsi:type="varchar" nullable="false" length="100" comment="Customer Group Code"/>
+    </table>
+</schema>

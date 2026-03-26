@@ -1,0 +1,106 @@
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \BalloonGroup\Register\Block\Register $block */
+/** @var $escaper \Magento\Framework\Escaper */
+?>
+<form class="form contact bg" action="<?= $block->getFormAction() ?>" method="post" id="contact-form"
+      enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('Personal Information')) ?></span></legend>
+
+        <div class="field name required">
+            <label class="label" for="name"><span><?= __('Bussiness Name') ?></span></label>
+            <div class="control">
+                <input name="razon_social" id="name" title="<?= __('Bussiness Name') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= __('E-mail') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= __('E-mail') ?>" value="" class="input-text" type="email" data-validate='{"required":true, "validate-email":true}'/>
+            </div>
+        </div>
+        <div class="field phone required">
+            <label class="label" for="phone"><span><?= __('Phone') ?></span></label>
+            <div class="control">
+                <input name="telephone" id="phone" title="<?= __('Phone') ?>" value="" class="input-text" type="tel" data-validate='{"required":true, "validate-digits":true}'/>
+            </div>
+        </div>
+        <div class="field state required">
+            <label class="label" for="state"><span><?= __('State') ?></span></label>
+            <div class="control">
+                <input name="provincia" id="state" title="<?= __('State') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field city required">
+            <label class="label" for="city"><span><?= __('Local City') ?></span></label>
+            <div class="control">
+                <input name="localidad" id="city" title="<?= __('Local City') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field address required">
+            <label class="label" for="address"><span><?= __('Company Address') ?></span></label>
+            <div class="control">
+                <input name="domicilio_comercial" id="address" title="<?= __('Company Address') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field postcode required">
+            <label class="label" for="postcode"><span><?= __('Postcode') ?></span></label>
+            <div class="control">
+                <input name="postcode" id="postcode" title="<?= __('Postcode') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field contact required">
+            <label class="label" for="contact"><span><?= __('Contact') ?></span></label>
+            <div class="control">
+                <input name="contacto" id="contact" title="<?= __('Contact') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('Delivery Information')) ?></span></legend>
+        <div class="field provincia_entrega required">
+            <label class="label" for="provincia_entrega"><span><?= __('State') ?></span></label>
+            <div class="control">
+                <input name="provincia_entrega" id="provincia_entrega" title="<?= __('State') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field localidad_entrega required">
+            <label class="label" for="localidad_entrega"><span><?= __('Local City') ?></span></label>
+            <div class="control">
+                <input name="localidad_entrega" id="localidad_entrega" title="<?= __('Local City') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field domicilio_entrega required">
+            <label class="label" for="domicilio_entrega"><span><?= __('Company Address Delivery') ?></span></label>
+            <div class="control">
+                <input name="domicilio_entrega" id="domicilio_entrega" title="<?= __('Company Address Delivery') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field postcode_entrega required">
+            <label class="label" for="postcode_entrega"><span><?= __('Postcode') ?></span></label>
+            <div class="control">
+                <input name="postcode_entrega" id="postcode_entrega" title="<?= __('Postcode') ?>" value="" class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('AFIP Certificate')) ?></span></legend>
+        <div class="field attachment required">
+            <label class="label"><span><?= __('Upload your certificate') ?></span></label>
+            <label class="label-attachment" for="attachment"><span><?= __('Choose your file') ?></span></label>
+            <div class="control">
+                <input name="attachment" id="attachment" accept=".pdf" class="input-text required-entry required-file" required="true" type="file" data-validate='{"required":true}'/>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <button type="submit" title="<?= __('Submit Form') ?>" class="action submit primary"><span><?= __('Submit') ?></span></button>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "#contact-form": {
+            "validation": {}
+        }
+    }
+</script>
+

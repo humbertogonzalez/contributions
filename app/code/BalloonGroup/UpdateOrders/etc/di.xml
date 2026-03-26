@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="BalloonGroup\UpdateOrders\Api\UpdateOrderInterface"
+                type="BalloonGroup\UpdateOrders\Model\UpdateOrder" />
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="sap_invoice" xsi:type="string">sales_order.sap_invoice</item>
+                <item name="sap_invoice_file" xsi:type="string">sales_order.sap_invoice_file</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

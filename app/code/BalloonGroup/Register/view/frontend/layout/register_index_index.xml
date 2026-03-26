@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Alta empresas</title>
+    </head>
+    <body>
+        <referenceBlock name="columns.top">
+            <block class="Magento\Framework\View\Element\Template" name="registerActionBack" template="BalloonGroup_Register::register_action_back.phtml" before="-"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="BalloonGroup\Register\Block\Register" name="companyForm" template="BalloonGroup_Register::form.phtml" />
+        </referenceContainer>
+    </body>
+</page>

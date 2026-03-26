@@ -1,0 +1,8 @@
+{
+    "sales_order": {
+        "column": {
+            "sap_invoice": true,
+            "sap_invoice_file": true
+        }
+    }
+}

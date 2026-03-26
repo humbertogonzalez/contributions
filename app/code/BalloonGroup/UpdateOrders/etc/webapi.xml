@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/order/updateOrders" method="PUT">
+        <service class="BalloonGroup\UpdateOrders\Api\UpdateOrderInterface" method="updateOrders"/>
+        <resources>
+            <resource ref="Magento_Sales::create" />
+        </resources>
+    </route>
+</routes>

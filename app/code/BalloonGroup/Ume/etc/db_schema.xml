@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bg_relacion_ume" resource="default" engine="innodb" comment="Amasty Checkout Placeholder Table">
+        <column xsi:type="smallint" name="ume_id" padding="5" unsigned="true" nullable="false" identity="true" comment="Ume ID"/>
+        <column xsi:type="varchar" name="sku" nullable="false" length="255" comment="SKU"/>
+        <column xsi:type="varchar" name="ume" nullable="false" length="255" comment="SKU"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="ume_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="BG_RELACION_UME_SKU">
+            <column name="sku"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Extension/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\User\Api\Data\UserInterface">
+        <attribute code="seller_id" type="string" />
+    </extension_attributes>
+</config>

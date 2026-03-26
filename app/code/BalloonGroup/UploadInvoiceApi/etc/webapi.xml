@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/balloongroup-invoice/addInvoice" method="POST">
+		<service class="BalloonGroup\UploadInvoiceApi\Api\UploadInvoiceRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="BalloonGroup_UploadInvoiceApi::upload_invoice_save"/>
+		</resources>
+	</route>
+</routes>

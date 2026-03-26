@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.price">
+            <block class="BalloonGroup\Ume\Block\Product\View\Ume"
+                   name="product.info.ume"
+                   template="BalloonGroup_Ume::product/view/ume.phtml"
+                   after="product.price.final" />
+        </referenceContainer>
+    </body>
+</page>

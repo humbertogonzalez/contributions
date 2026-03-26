@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="BalloonGroup_UploadInvoiceApi::main"
+             title="Manage Invoices"
+             translate="title"
+             module="BalloonGroup_UploadInvoiceApi"
+             sortOrder="900"
+             parent="Magento_Sales::sales"
+             resource="BalloonGroup_UploadInvoiceApi::main"/>
+        <add id="BalloonGroup_UploadInvoiceApi::upload_invoice"
+             title="Facturas No Relacionadas a Pedido"
+             translate="title"
+             module="BalloonGroup_UploadInvoiceApi"
+             sortOrder="10"
+             parent="BalloonGroup_UploadInvoiceApi::main"
+             action="balloongroup_uploadinvoiceapi/uploadinvoice/index"
+             resource="BalloonGroup_UploadInvoiceApi::upload_invoice"/>
+    </menu>
+</config>

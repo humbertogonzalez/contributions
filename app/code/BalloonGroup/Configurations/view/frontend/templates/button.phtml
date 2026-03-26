@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var $helper  BalloonGroup\Configurations\Helper\Config
+ */
+
+$config = $this->helper('BalloonGroup\Configurations\Helper\Config');
+?>
+
+<div class="whatsapp-button">
+    <a href="<?= $config->getWhatsappNumberByStore()?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= $escaper->escapeUrl($block->getViewFileUrl('images/WhatsApp.png'))?>" alt="WhatsApp Logo" />
+    </a>
+</div>

@@ -1,0 +1,38 @@
+& when (@media-common = true) {
+    .whatsapp-button {
+        position: fixed;
+        bottom: 120px;
+        right: 20px;
+        left: auto;
+        z-index: 100;
+        transition: all 0.3s ease;
+
+        img {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    @media print {
+        .whatsapp-button {
+            display: none !important;
+        }
+    }
+}
+
+// Mobile response
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .whatsapp-button {
+        right: 15px;
+        bottom: 100px;
+    }
+
+    @media print {
+        .whatsapp-button {
+            display: none !important;
+        }
+    }
+}

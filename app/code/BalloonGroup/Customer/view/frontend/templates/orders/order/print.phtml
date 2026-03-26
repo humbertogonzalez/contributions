@@ -1,0 +1,36 @@
+<?php
+/** @var \Magento\Sales\Block\Order\Info\Buttons $block */
+/** @var $escaper \Magento\Framework\Escaper */
+$helper = $this->helper(\BalloonGroup\Sales\Helper\Data::class);
+?>
+<div class="order-print">
+    <a id="print-quote-pdf" href="#"
+       class="action order">
+        <span><?= $escaper->escapeHtml(__('Print Order')) ?></span>
+    </a>
+    <a href="#" data-post='<?= /* @noEscape */ $helper->getPostData(
+        $block->getUrl('bgsales/index/index', ['order_id' => $block->getOrder()->getId(), 'download' => true])
+    ) ?>'
+       class="action order">
+        <span><?= $escaper->escapeHtml(__('Download PDF')) ?></span>
+    </a>
+</div>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $('#print-quote-pdf').on('click', function () {
+            const printWindow = window.open('<?= $block->getUrl('bgsales/index/index', ['order_id' => $block->getOrder()->getId()]); ?>', '_blank');
+            if (printWindow) {
+                printWindow.focus();
+                // Wait for PDF to load before triggering print
+                const interval = setInterval(function () {
+                    if (printWindow.document.readyState === 'complete') {
+                        clearInterval(interval);
+                        printWindow.print();
+                    }
+                }, 500);
+            } else {
+                alert("Please allow popups for this website.");
+            }
+        });
+    });
+</script>

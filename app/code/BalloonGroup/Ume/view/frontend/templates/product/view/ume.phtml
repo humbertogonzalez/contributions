@@ -1,0 +1,13 @@
+<?php
+/** @var \BalloonGroup\Ume\Block\Product\View\Ume $block */
+$ume = $block->getProductUme();
+
+if ($ume) {
+    $umeData = $block->getUmeFromCollection();
+?>
+    <div class="final-price-ume">
+        (<?= $block->escapeHtml($block->calculateUmePrice((float)$ume)) . " / " . $umeData->getUme() ?>)
+    </div>
+<?php
+}
+?>

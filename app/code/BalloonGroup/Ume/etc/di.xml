@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="BalloonGroup\Ume\Api\UmeRepositoryInterface" type="BalloonGroup\Ume\Model\UmeRepository"/>
+    <preference for="BalloonGroup\Ume\Api\Data\UmeInterface" type="BalloonGroup\Ume\Model\Ume"/>
+    <preference for="BalloonGroup\Ume\Api\Data\UmeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="BalloonGroup\Ume\Model\ResourceModel\Ume\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">bg_relacion_ume</argument>
+            <argument name="resourceModel" xsi:type="string">BalloonGroup\Ume\Model\ResourceModel\Ume\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="balloongroup_ume_ume_listing_data_source" xsi:type="string">BalloonGroup\Ume\Model\ResourceModel\Ume\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

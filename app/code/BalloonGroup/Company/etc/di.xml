@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="BalloonGroup\Company\Api\CompanyRepositoryInterface" type="BalloonGroup\Company\Model\Repository\CompanyRepository" />
+    <preference for="BalloonGroup\Company\Api\SalesUserInterface" type="BalloonGroup\Company\Model\Repository\SalesUser" />
+    <preference for="Magento\User\Block\User\Edit\Tab\Main" type="BalloonGroup\Company\Block\User\Edit\Tab\Main"/>
+    <type name="BalloonGroup\Company\Api\SalesUserInterface">
+        <arguments>
+            <argument name="UserFactory" xsi:type="object">Magento\User\Model\UserFactory</argument>
+            <argument name="UserResource" xsi:type="object">Magento\User\Model\ResourceModel\User</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Payment\Model\MethodInterface">
+        <plugin name="BalloonGroup_Company::DisablePaymentMethods" type="BalloonGroup\Company\Plugin\DisablePaymentMethod"/>
+    </type>
+    <type name="Amasty\CompanyAccount\Model\Repository\CompanyRepository">
+        <plugin name="BalloonGroup_Company::SaveCompanyInConfig" type="BalloonGroup\Company\Plugin\SaveCompanyInConfig"/>
+    </type>
+    <preference for="Amasty\RequestQuote\Helper\Data" type="BalloonGroup\Company\Helper\Data"/>
+    <preference for="Amasty\CompanyAccount\Model\MailSender" type="BalloonGroup\Company\Model\MailSender" />
+</config>

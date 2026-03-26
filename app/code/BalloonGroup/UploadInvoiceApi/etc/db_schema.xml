@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="dimagraf_invoice_management" resource="default" engine="innodb" comment="PDF outside magento table">
+		<column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<column name="id_customer" nullable="true" xsi:type="text" comment="ID Customer"/>
+		<column name="id_invoice" nullable="true" xsi:type="text" comment="ID Invoice"/>
+		<column name="url_invoice" nullable="true" xsi:type="text" comment="URL Invoice"/>
+		<column name="created_at" nullable="true" xsi:type="datetime" comment="Created At" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+	</table>
+</schema>
