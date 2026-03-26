@@ -1,0 +1,63 @@
+<!-- ko if: products().length > 0 -->
+<h1 data-bind="text: title" style="text-align: center; margin: 0"></h1>
+<!-- /ko-->
+<!-- ko if: products().length === 0 && loadedProducts() -->
+<h4 style="text-align: center; margin: 0">Para este número de serie, no encontramos Productos asociados, podrás elegir un purificador de otra marca, En el Plan Canje <a href="/purificadores-de-agua.html?canje=1">AQUI</a></h4>
+<!-- /ko-->
+<!-- ko if: success -->
+<div class="bar success">
+    <i class="ico">&#10004;</i><span>Producto Agregado con éxtio</span>
+</div>
+<!-- /ko-->
+<!-- ko if: error -->
+<div class="bar error">
+    <i class="ico">&#9747;</i><span data-bind="text: errorText"></span>
+</div>
+<!-- /ko-->
+<div class="products wrapper grid products-grid" id="products" style="padding-top: 0">
+    <ol class="products list items product-items" data-bind="foreach: products">
+        <li class="item product product-item">
+                <div class="product-item-info hover-animation-zoom-item">
+                <div class="product_image">
+                    <a data-bind="attr: {href: url}" class="product photo product-item-photo">
+                        <span class="product-image-wrapper" style="height: 300px">
+                            <!-- ko if: image -->
+                            <img data-bind="attr: {src: '/media/catalog/product' + image}" alt="" class="product-image-photo lazy">
+                            <!-- /ko-->
+                        </span>
+                    </a>
+                </div>
+                <div class="product details product-item-details">
+                    <h2 class="product name product-item-name">
+                        <a class="product-item-link" data-bind="text: name, attr: {href: url}"></a>
+                    </h2>
+                    <div class="price-box price-final_price">
+                        <div class="normal-price">
+                            <div class="price-wrapper ">
+                                <span class="price" data-bind="html: price">
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item-inner hoverShow">
+                        <div class="product-item-inner-hide"></div>
+                        <div class="product actions product-item-actions  center">
+                            <div class="actions-primary">
+                                <div class="addtocart_position_5 center">
+                                    <form data-bind="attr: {action: $parent.url_add_product},submit: $parent.addProduct.bind($parent, $data)" method="POST">
+                                        <input type="hidden" name="product" data-bind="attr: {value: entity_id}">
+                                        <input type="hidden" name="form_key" data-bind="attr: {value: $parent.formKey}">
+                                        <button type="submit" title="Agregar al Carrito" class="action tocart primary">
+                                            <span>Agregar al Carrito</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

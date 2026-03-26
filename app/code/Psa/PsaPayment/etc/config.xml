@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <atm_psa>
+                <model>BalloonGroup\PsaPayment\Model\Payment</model>
+                <title>ATM Psa Payment</title>
+                <active>1</active>
+                <order_status>processing</order_status>
+                <gateway_url>https://test-atm.psa.com.ar</gateway_url>
+                <client_id>tienda.psa.com.ar</client_id>
+                <public_key>3fc6496c-a697-4556-8bd0-47b6c2b7a721</public_key>
+                <private_key>b8c1814f-578c-4e3d-9010-94f85e53f1d9</private_key>
+            </atm_psa>
+        </payment>
+    </default>
+</config>

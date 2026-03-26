@@ -1,0 +1,57 @@
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input
+            type="radio"
+            name="payment[method]"
+            class="radio"
+            data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"
+        />
+        <label class="label" data-bind="attr: {'for': getCode()}">
+            <!-- ATM Title -->
+            <span data-bind="text: getTitle()"></span>
+        </label>
+    </div>
+
+    <div class="payment-method-content">
+        <div class="panel-checkout">
+            <div class="row">
+                <div class="col-md-12 pt-20">
+                    <div class="redirect-frame">
+                        <img
+                            data-bind="attr: {alt: 'ATM Redirect', src: getLogoUrl()}"
+                            class="logo-atm-redirect"
+                        />
+                        <p>
+                            <!-- ko i18n: 'Te llevamos a nuestro sitio para completar el pago'--><!-- /ko -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="checkout-agreements-block">
+            <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="actions-toolbar">
+            <div class="primary mp-d-flex-baseline">
+                <button
+                    class="action primary checkout"
+                    type="submit"
+                    data-role="review-save"
+                    data-bind="click: placeOrder, attr: {title: $t('Continue')}"
+                >
+                    <span data-bind="i18n: 'Continue'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

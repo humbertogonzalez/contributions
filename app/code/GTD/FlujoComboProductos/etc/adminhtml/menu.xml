@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Empresas::top_level" title="Empresas" module="Empresas_FlujoComboProductos" sortOrder="10"
+             resource="Magento_Backend::content"/>
+
+        <add id="Empresas_FlujoComboProductos::root" sortOrder="1" title="Paso a paso" module="Empresas_FlujoComboProductos"
+             parent="Empresas::top_level" resource="Empresas_FlujoComboProductos::management" translate="title" />
+
+        <add id="Empresas_FlujoComboProductos::empresas_flujocomboproductos_combos" title="Crear combos"
+             module="Empresas_FlujoComboProductos" sortOrder="2" resource="Magento_Backend::content"
+             parent="Empresas_FlujoComboProductos::root" action="empresas_flujocomboproductos/combos/index"/>
+    </menu>
+</config>

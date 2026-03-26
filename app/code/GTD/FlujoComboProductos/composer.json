@@ -1,0 +1,22 @@
+{
+    "name": "empresas/module-flujocomboproductos",
+    "description": "hecho por balloon group juan reyes - modulo para crear flujo de creacion de combo para productos",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "juan reyes",
+            "email": "juan.reyes@balloon-group.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Empresas\\FlujoComboProductos\\": ""
+        }
+    }
+}

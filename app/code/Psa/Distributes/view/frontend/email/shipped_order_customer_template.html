@@ -1,0 +1,22 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Orden Entregada"}} @-->
+<!--@vars {
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>{{trans "FELICITACIONES!!!"}}</p>
+            <p>{{trans "Tu pedido ha sido entregado con éxito!!!"}}</p>
+            <p>{{trans "En caso que no hayas recibido el mismo, por favor contáctanos a: %email" email=$custom_email}}</p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

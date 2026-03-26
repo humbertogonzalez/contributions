@@ -1,0 +1,146 @@
+<?php
+use Balloon\RestClientMapErrors\Block\Adminhtml\Grid;
+/* @var Grid $block */
+?>
+<div id="map_errors" class="map_errors">
+    <div id="hidden">
+        <?php echo $block->getBlockHtml('formkey')?>
+    </div>
+    <div id="map_errors_content" data-bind="scope:'map_errors_content'">
+        <div class="main-parent-loader show">
+            <div class="container">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+        <div id="app_vue">
+            <v-app>
+                <v-main>
+                    <v-container>
+                        <v-snackbar
+                            right
+                            top
+                            color="success"
+                            :timeout="2000"
+                            v-model="displaySuccess"
+                        >
+                            {{displaySuccessMessage}}
+                        </v-snackbar>
+                        <v-snackbar
+                            right
+                            top
+                            color="error"
+                            :timeout="2000"
+                            v-model="displayError"
+                        >
+                            {{displayErrorMessage}}
+                        </v-snackbar>
+                        <v-expansion-panels>
+                            <v-expansion-panel
+                                v-for="(error, indexType) in errors"
+                                :key="indexType"
+                            >
+                                <v-expansion-panel-title expand-icon="mdi-menu-down">
+                                    {{error.label}}
+                                </v-expansion-panel-title>
+                                <v-expansion-panel-text>
+                                    <v-expansion-panels>
+                                        <v-expansion-panel v-if="error.default">
+                                            <v-expansion-panel-title expand-icon="mdi-menu-down">
+                                                Default
+                                            </v-expansion-panel-title>
+                                            <v-expansion-panel-text>
+                                                <div :class="{ change: error.change }" class="inner-grid">
+                                                    <v-autocomplete
+                                                        v-model="error.default.block_code"
+                                                        label="Block Code"
+                                                        :items="blocks"
+                                                        :disabled="error.defaultLoading"
+                                                        @update:model-value="error.change = true"
+                                                    ></v-autocomplete>
+                                                    <v-btn
+                                                        height="100%"
+                                                        color="#eb5202"
+                                                        class="white"
+                                                        :loading="error.defaultLoading"
+                                                        @click="saveDefault(indexType)"
+                                                    >
+                                                        Guardar
+                                                    </v-btn>
+                                                </div>
+                                            </v-expansion-panel-text>
+                                        </v-expansion-panel>
+                                        <v-expansion-panel>
+                                            <v-expansion-panel-title expand-icon="mdi-menu-down">
+                                                List Map Errors
+                                            </v-expansion-panel-title>
+                                            <v-expansion-panel-text >
+                                                <div class="inner-grid-parent">
+                                                    <div :class="{ change: item.change, new: item.new && !item.change }" class="inner-grid double-actions" v-for="item,index in error.list" :key="index">
+                                                        <v-text-field
+                                                            @change="item.change = true"
+                                                            label="Error Code"
+                                                            v-model="item.code_response"
+                                                            :items="blocks"
+                                                            variant="solo"
+                                                            required
+                                                            :disabled="item.loadingSave || item.loadingDelete"
+                                                        ></v-text-field>
+                                                        <v-autocomplete
+                                                            @update:model-value="item.change = true"
+                                                            v-model="item.block_code"
+                                                            label="Block Code"
+                                                            :items="blocks"
+                                                            :disabled="item.loadingSave || item.loadingDelete"
+                                                        ></v-autocomplete>
+                                                        <v-btn
+                                                            height="100%"
+                                                            color="#eb5202"
+                                                            class="white"
+                                                            @click="saveError(indexType, index)"
+                                                            :disabled="item.loadingDelete"
+                                                            :loading="item.loadingSave"
+                                                        >
+                                                            Guardar
+                                                        </v-btn>
+                                                        <v-btn
+                                                            height="100%"
+                                                            color="error"
+                                                            class="white"
+                                                            @click="deleteError(indexType, index)"
+                                                            :loading="item.loadingDelete"
+                                                            :disabled="item.loadingSave"
+                                                        >
+                                                            Eliminar
+                                                        </v-btn>
+                                                    </div>
+                                                </div>
+                                                <div class="actions">
+                                                    <v-btn
+                                                        height="100%"
+                                                        color="secondary"
+                                                        @click="addError(indexType)"
+                                                        :disabled="error.loading"
+                                                    >
+                                                        Agregar
+                                                    </v-btn>
+                                                </div>
+                                            </v-expansion-panel-text>
+                                        </v-expansion-panel>
+                                    </v-expansion-panels>
+                                </v-expansion-panel-text>
+                            </v-expansion-panel>
+                        </v-expansion-panels>
+                    </v-container>
+                </v-main>
+            </v-app>
+        </div>
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "#map_errors_content": {
+        "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    }
+}
+</script>

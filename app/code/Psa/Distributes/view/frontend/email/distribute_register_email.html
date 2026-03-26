@@ -1,0 +1,19 @@
+<!--@subject {{trans "Nueva cuenta de distribuidor en TIENDA PSA"}} @-->
+<!--@vars {
+"template config_path=\"design\/email\/footer_template\"":"Email Footer Template",
+"template config_path=\"design\/email\/header_template\"":"Email Header Template"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">Hola <span style="text-transform:uppercase;">{{trans "%dis_name," dis_name=$distribute_name}}</span></p>
+<p>{{trans "Bienvenido a la TIENDA OFICIAL PSA!"}}</p>
+<p>A partir de este momento podrás recibir compras de tus usuarios, y si sos TOP 50, de nuevos usuarios de la tienda.</p>
+<p>Para poder gestionar tus pedidos, ingresa aquí: <a href='{{config path="web/secure/base_url"}}admin' target="_blank">
+    {{config path="web/secure/base_url"}}admin</a> con tu email y contraseña.</p>
+<ul>
+    <li><strong>{{trans "Email:"}}</strong> {{var distribute_email}}</li>
+    <li><strong>{{trans "Password:"}}</strong> <em>{{var password}}</em></li>
+</ul>
+<p>TE DESEAMOS TODOS LOS EXITOS!</p>
+{{template config_path="design/email/footer_template"}}

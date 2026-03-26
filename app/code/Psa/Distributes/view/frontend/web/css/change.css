@@ -1,0 +1,23 @@
+#co-shipping-method-form span.price {
+    display: none;
+}
+#co-shipping-method-form select {
+    display: none;
+}
+.ampickup-store-container .ampickup-separator {
+    align-self: stretch;
+    margin: 15px 0;
+    width: inherit;
+    border-top: 1px solid #c7c7c7;
+    display: none;
+}
+div#checkout-shipping-method-load {
+    display: none;
+
+}
+#onepage-checkout-shipping-method-additional-load select {
+    display: none;
+}
+span.ampickup-separator.-checkout {
+    display: none;
+}

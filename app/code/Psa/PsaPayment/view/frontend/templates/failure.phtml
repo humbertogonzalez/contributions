@@ -1,0 +1,31 @@
+<?php
+/**
+ * @var BalloonGroup\PsaPayment\Block\Checkout\Failure $block
+ */
+
+$checkoutUrl = $block->escapeUrl($block->getCheckoutUrl());
+?>
+
+<div id="box-atmpayment">
+    <h2 class="atmpayment-title">
+        <?= /* @escapeNotVerified */ __('It was unable to complete payment with ATM!'); ?>
+    </h2>
+
+    <p><?= /* @escapeNotVerified */ __('Click on the button below to try the payment again:') ?></p>
+</div>
+
+<div class="primary button-success">
+    <a
+        class="action primary continue"
+        href="<?= $checkoutUrl ?>"
+    >
+        <span>
+            <?php /* @escapeNotVerified */ echo __('Retry payment') ?>
+        </span>
+    </a>
+</div>
+
+<div id="logo-atm" style="margin-top: 40px">
+    <img src="<?php echo $block->getLogoATM();?>">
+</div>
+

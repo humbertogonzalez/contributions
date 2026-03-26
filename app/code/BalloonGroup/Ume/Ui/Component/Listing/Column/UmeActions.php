@@ -81,7 +81,6 @@ class UmeActions extends Column
                 }
             }
         }
-        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->info(print_r($dataSource, true));
         return $dataSource;
     }
 }

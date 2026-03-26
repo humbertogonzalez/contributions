@@ -1,0 +1,110 @@
+& when (@media-common = true) {
+    #menu-empresas-top-level {
+
+        > .submenu > ul > .level-1:only-of-type > .submenu-group-title {
+            display: block !important;
+        }
+
+        > a:before {
+            margin: 0 auto 10px auto;
+            background-size: 30px 30px;
+            width: 30px;
+            height: 30px;
+            content: "";
+            border-radius: 20px;
+        }
+    }
+
+    .accordion .config#segmento_empresas_configuracion_success_page .value,
+    .accordion .config#segmento_empresas_configuracion_url_combos .value,
+    .accordion .config#segmento_empresas_configuracion_gp_paso_a_paso .value,
+    .accordion .config#segmento_empresas_configuracion_currency_symbol .value,
+    .accordion .config#segmento_empresas_configuracion_summary_disclaimers .value{
+        width: auto !important;
+    }
+
+        .accordion .config#segmento_empresas_configuracion_url_combos #row_segmento_empresas_configuracion_url_combos_value {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+            text-align: left;
+        }
+        .value{
+            width: 100%;
+        }
+    }
+
+    .empresas_flujocomboproductos-combos-edit {
+        .sticky-header {
+            display: none !important;
+        }
+        .action-select-wrap {
+            display: none !important;
+        }
+
+        #list,
+        #treeview {
+            min-height: 100px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+
+            li {
+                list-style-type: none;
+                padding: 12px;
+                margin: 5px 0;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                position: relative;
+            }
+        }
+
+        .tree-branch {
+            margin-left: 20px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            right: 14px;
+            top: 8px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 1px 5px;
+            cursor: pointer;
+        }
+
+        .export-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container-treeview {
+            display: flex;
+
+            .right,
+            .left {
+                width: 50%;
+                height: fit-content;
+            }
+
+            .add-products.fixed {
+                position: fixed;
+                top: 110px;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+        }
+
+        [data-bind="scope: 'empresas_flujocomboproductos_combos_form.empresas_flujocomboproductos_combos_form'"] .admin__field:first-child {
+            .lib-visually-hidden();
+        }
+    }
+}

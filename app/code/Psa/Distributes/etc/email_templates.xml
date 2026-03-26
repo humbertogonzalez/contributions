@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template
+        id="distribute_new_dealer" label="New Dealer Account" file="distribute_register_email.html"
+        type="html" module="BalloonGroup_Distributes" area="frontend"/>
+    <template id="distribute_order_email" label="Distribute Order" file="distribute_order_email.html" type="html"
+              module="BalloonGroup_Distributes" area="frontend"/>
+    <template id="shipped_order_customer_template" label="Shipped Order" file="shipped_order_customer_template.html"
+              type="html" module="BalloonGroup_Distributes" area="frontend"/>
+</config>

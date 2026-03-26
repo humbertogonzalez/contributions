@@ -1,0 +1,14 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="balloon_rest_request_report">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="varchar" name="message" nullable="false" length="1024" comment="Mensaje de error"/>
+        <column xsi:type="longtext" name="request" nullable="false" comment="request"/>
+        <column xsi:type="longtext" name="response" nullable="false" comment="response"/>
+        <column xsi:type="int" name="type_id" unsigned="true" nullable="false" comment="Type Log"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="created at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

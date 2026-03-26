@@ -1,0 +1,24 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="balloon_rest_client_map_errors">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="smallint" name="type_map" unsigned="true" nullable="false" comment="Type Map"/>
+        <column xsi:type="smallint" name="code_response" comment="Code Response"/>
+        <column xsi:type="varchar" name="block_code" nullable="false" length="255" comment="Block Code"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="UNIQUE_PRODUCT_ATTRIBUTES_NAME">
+            <column name="type_map"/>
+            <column name="code_response"/>
+        </constraint>
+    </table>
+    <table name="balloon_rest_client_default_errors">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="smallint" name="type_map" unsigned="true" nullable="false" comment="Type Map"/>
+        <column xsi:type="varchar" name="block_code" nullable="false" length="255" comment="Block Code"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Empresas_FlujoComboProductos::combos" title="combos" sortOrder="10">
+					<resource id="Empresas_FlujoComboProductos::combos_save" title="Save combos" sortOrder="10"/>
+					<resource id="Empresas_FlujoComboProductos::combos_delete" title="Delete combos" sortOrder="20"/>
+					<resource id="Empresas_FlujoComboProductos::combos_update" title="Update combos" sortOrder="30"/>
+					<resource id="Empresas_FlujoComboProductos::combos_view" title="View combos" sortOrder="40"/>
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Empresas_FlujoComboProductos::config_empresas_flujocomboproductos" title="configuracion"/>
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

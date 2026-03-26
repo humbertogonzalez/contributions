@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="amasty_amlocator_location">
+        <column xsi:type="varchar" name="code" nullable="false" length="15" comment="Codigo Distribuidor"/>
+        <column xsi:type="varchar" name="code_imp" nullable="false" length="50" comment="Codigo Impositivo"/>
+        <column xsi:type="boolean" name="top" nullable="false" default="false" comment="Se muestra en el mapa?"/>
+    </table>
+    <table name="quote_item">
+        <column xsi:type="int" name="qty_canje" nullable="false" comment="Qty Canje"/>
+        <column xsi:type="boolean" name="canje" nullable="false" default="false" comment="Es via canje"/>
+    </table>
+    <table name="balloongroup_distributes_serial">
+        <column xsi:type="smallint" name="serial_id" padding="7" unsigned="false" nullable="false" identity="true" comment="serial_ID" />
+        <column xsi:type="varchar" name="code_serial" nullable="false" length="8" comment="Serial"/>
+        <column xsi:type="smallint" name="status" unsigned="false" default="0" comment="Staus"/>
+        <column xsi:type="varchar" name="sku"  length="15"  comment="SKU producto canjeable"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="serial_id"/>
+        </constraint>
+    </table>
+</schema>

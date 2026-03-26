@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <distributes>
+            <general>
+                <grant_type>password</grant_type>
+                <client_secret>5c06ae93-3502-4577-9586-ecdb57b715e9</client_secret>
+                <username>magento</username>
+                <password>b8e065255d5326ea3cf1f85b0dd764f3</password>
+                <client_id>magento</client_id>
+                <cron_schedule>0 9,14,20 * * *</cron_schedule>
+            </general>
+            <textEdit>
+                <titleCanje>Conocé los beneficios del Plan Canje</titleCanje>
+                <canjeTexto>El fin de la vida útil de tu purificador* coincide con el plazo de su
+                    garantía. Una vez pasado ese período, se recomienda el recambio del producto ya
+                    que la prestación que puede brindar no es la óptima. Esto se debe a que los
+                    medios activos disminuyen su eficacia en la reducción de los contaminantes del
+                    agua.
+                    En PSA recibimos los purificadores vencidos y nos encargamos de que todas las
+                    piezas del equipo reciban el tratamiento adecuado. Así, evitamos que se
+                    conviertan en desecho y dejamos juntos una huella positiva en el ambiente.
+                </canjeTexto>
+                <titleSerie>INGRESA AQUÍ EL CODIGO DE SERIE DE TU PURIFICADOR VENCIDO</titleSerie>
+                <findSerie>Buscar Serie</findSerie>
+                <productCanje>Productos de Canje</productCanje>
+                <withoutDealer>Para este número de serie, no encontramos Distribuidor asociado, pero antes de finalizar la compra, podrás elegir uno según tu conveniencia en el mapa</withoutDealer>
+                <withoutSerial>Para este número de serie, no encontramos Productos asociados, podrás elegir un purificador de otra marca, En el Plan Canje </withoutSerial>
+            </textEdit>
+        </distributes>
+        <distributes_canje>
+            <general>
+                <discount>10</discount>
+            </general>
+        </distributes_canje>
+    </default>
+</config>

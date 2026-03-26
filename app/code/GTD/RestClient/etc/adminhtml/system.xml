@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="web_services" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label">
+            <label>Web Services</label>
+            <tab>balloon_core</tab>
+            <resource>Balloon_RestClient::config</resource>
+            <group id="config" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+                <field id="enabled" translate="label comments" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled Services</label>
+                    <comment>habilitar factibilidad tecnica y comercial,agendamiento y finalizar contratacion</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="url_base" translate="label"  sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Url Base</label>
+                    <validate>validate-url</validate>
+                </field>
+                <field id="store_code" translate="label"  type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store Code</label>
+                    <source_model>Balloon\RestClient\Model\Config\Source\StoreCodes</source_model>
+                </field>
+                <field id="enabled_logs" translate="label comments" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled Logs</label>
+                    <comment>Enabled logs for all request</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enabled_logs_db" translate="label comments" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled Logs on grid</label>
+                    <comment>Enabled logs for all request on DB</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="ballongroup_psa">
+        <job name="balloongroup_orders_cancel_orders_pending" instance="BalloonGroup\Orders\Cron\CancelOrdersPending"
+             method="execute">
+            <schedule>0 */3 * * *</schedule>
+        </job>
+        <job name="balloongroup_orders_finish_orders_confirm" instance="BalloonGroup\Orders\Cron\FinishOrdersConfirm"
+             method="execute">
+            <schedule>59 23 * * *</schedule>
+        </job>
+    </group>
+</config>

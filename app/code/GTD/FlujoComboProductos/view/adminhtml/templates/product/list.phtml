@@ -1,0 +1,58 @@
+<ul id="list">
+</ul>
+
+<button id="addSelectedProducts">Agregar Productos Seleccionados</button>
+<button id="eliminarSelectedProducts">Limpiar lista</button>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const addButton = document.getElementById('addSelectedProducts');
+        const itemList = document.getElementById('list');
+
+        addButton.addEventListener('click', function () {
+            const selectedProducts = document.querySelectorAll('.data-grid-checkbox-cell input:checked');
+
+            if (selectedProducts.length === 0) {
+                alert('Por favor selecciona al menos un producto para agregar.');
+                return;
+            }
+
+            selectedProducts.forEach(checkbox => {
+                const productId = checkbox.value;
+                const row = checkbox.closest('tr');
+
+                if (row) {
+                    const productName = row.querySelector('.data-name')?.textContent.trim() || 'Sin nombre';
+                    const productSKU = row.querySelector('.data-sku')?.textContent.trim() || 'Sin SKU';
+
+                    const newItem = document.createElement('li');
+                    newItem.textContent = `${productName} (SKU: ${productSKU})`;
+                    newItem.setAttribute('data-sku', productSKU)
+                    newItem.setAttribute('data-name', productName)
+
+                    // Agregar la clase necesaria para reconocer el nuevo elemento
+                    newItem.classList.add('draggable-item');
+
+                    itemList.appendChild(newItem);
+
+                    checkbox.checked = false;
+                    checkbox.disabled = false;
+
+                    // Inicializar como draggable para los nuevos elementos
+                    require(['jquery', 'jquery/ui'], function ($) {
+                        $(newItem).draggable({
+                            helper: 'clone',
+                            revert: 'invalid',
+                        });
+                    });
+                }
+            });
+        });
+
+        const removeButton = document.getElementById('eliminarSelectedProducts');
+        removeButton.addEventListener('click', function () {
+            itemList.innerHTML = '';
+        });
+    });
+</script>

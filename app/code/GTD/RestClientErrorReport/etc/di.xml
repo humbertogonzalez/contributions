@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Balloon\RestClientErrorReport\Ui\DataProvider\Logs\ListingDataProvider">
+        <plugin name="dev_grid_attributes" type="Balloon\RestClientErrorReport\Plugin\AddAttributesToUiDataProvider"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="restlog_grid_listing_data_source" xsi:type="string">RestlogGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="RestlogGridCollection" type="Balloon\RestClientErrorReport\Ui\DataProvider\Logs\Listing\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">balloon_rest_request_report</argument>
+            <argument name="resourceModel" xsi:type="string">Balloon\RestClientErrorReport\Model\ResourceModel\Logs</argument>
+        </arguments>
+    </virtualType>
+</config>

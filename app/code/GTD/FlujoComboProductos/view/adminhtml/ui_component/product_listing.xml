@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">product_listing.product_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>product_columns</spinner>
+        <deps>
+            <dep>product_listing.product_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="product_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Magento_Catalog::products</aclResource>
+        <dataProvider class="Empresas\FlujoComboProductos\Ui\DataProvider\Product\ListingDataProvider" name="product_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <columns name="product_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+                <fieldClass>
+                    <class name="data-id">true</class>
+                </fieldClass>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+                <fieldClass>
+                    <class name="data-name">true</class>
+                </fieldClass>
+            </settings>
+        </column>
+        <column name="sku">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">SKU</label>
+                <fieldClass>
+                    <class name="data-sku">true</class>
+                </fieldClass>
+            </settings>
+
+        </column>
+        <column name="price" class="Magento\Catalog\Ui\Component\Listing\Columns\Price">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Price</label>
+            </settings>
+        </column>
+    </columns>
+    <filters name="listing_filters">
+        <filterSelect name="store_id" provider="${ $.parentName }">
+            <settings>
+                <captionValue>0</captionValue>
+                <options class="Magento\Store\Ui\Component\Listing\Column\Store\Options"/>
+                <label translate="true">Store View</label>
+                <dataScope>store_id</dataScope>
+                <imports>
+                    <link name="visible">componentType = column, index = ${ $.index }:visible</link>
+                </imports>
+            </settings>
+        </filterSelect>
+    </filters>
+    <paging name="listing_paging"/>
+</listing>

@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Balloon\RestClient\Api\Sdk\Gtd\ClientInterface" type="Balloon\RestClient\Sdk\Gtd\Client" />
+
+    <virtualType name="CustomFileError" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/rest_request.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CustomLoggerError" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="error" xsi:type="object">CustomFileError</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Balloon\RestClient\Sdk\Gtd\Client">
+        <arguments>
+            <argument name="logger" xsi:type="object">CustomLoggerError</argument>
+        </arguments>
+    </type>
+</config>

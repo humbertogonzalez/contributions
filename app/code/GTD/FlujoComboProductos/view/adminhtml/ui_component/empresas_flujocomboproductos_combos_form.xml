@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">empresas_flujocomboproductos_combos_form.combos_form_data_source
+            </item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Empresas\FlujoComboProductos\Block\Adminhtml\Combos\Edit\BackButton"/>
+            <button name="delete" class="Empresas\FlujoComboProductos\Block\Adminhtml\Combos\Edit\DeleteButton"/>
+            <button name="save" class="Empresas\FlujoComboProductos\Block\Adminhtml\Combos\Edit\SaveButton"/>
+            <button name="save_and_continue"
+                    class="Empresas\FlujoComboProductos\Block\Adminhtml\Combos\Edit\SaveAndContinueButton"/>
+        </buttons>
+        <namespace>empresas_flujocomboproductos_combos_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>empresas_flujocomboproductos_combos_form.combos_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="combos_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider name="combos_form_data_source" class="Empresas\FlujoComboProductos\Model\Combos\DataProvider">
+            <settings>
+                <requestFieldName>combos_id</requestFieldName>
+                <primaryFieldName>combos_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label>General</label>
+        </settings>
+        <field name="name" formElement="textarea" sortOrder="30">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Nombre</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="combo" formElement="textarea" sortOrder="10">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">combos</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Combo JSON</label>
+                <dataScope>combo</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+</form>

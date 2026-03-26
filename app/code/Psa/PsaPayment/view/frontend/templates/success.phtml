@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var BalloonGroup\PsaPayment\Block\Checkout\Success $block
+ */
+
+$order = $this->getOrder();
+$payment = $this->getPayment();
+
+//generate link to order
+$successMsg = 'Your order %1 has been successfully generated.';
+$link_to_order = '<a href="' . $block->escapeUrl($this->getOrderUrl()) . '">' . $block->escapeHtml($order->getIncrementId()) . '</a>';
+
+
+?>
+
+<div id="box-atmpayment">
+    <h2 class="atmpayment-title">
+        <?= /* @escapeNotVerified */ __('Thank you for your purchase!'); ?>
+    </h2>
+
+    <p><?php /* @escapeNotVerified */ echo __($successMsg, $link_to_order); ?></p>
+</div>
+
+<div id="logo-atmpayment">
+    <img src="<?php echo $block->getLogoATM();?>"/>
+</div>
+
+<div class="primary button-success">
+    <a class="action primary continue" href="<?php echo $block->escapeUrl($block->getUrl()) ?>">
+        <span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span>
+    </a>
+</div>

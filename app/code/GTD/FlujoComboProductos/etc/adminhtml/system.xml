@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="segmento_empresas" translate="label" sortOrder="999">
+			<label>Segmento empresas</label>
+		</tab>
+		<section id="segmento_empresas_configuracion" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Configuracion</label>
+			<tab>segmento_empresas</tab>
+			<resource>Empresas_FlujoComboProductos::config_empresas_flujocomboproductos</resource>
+			<group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>general</label>
+				<field id="activar" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>activar</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+            <group id="tipo_producto" translate="label" type="text" sortOrder="490" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tipo de producto</label>
+                <field id="value" translate="label" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configuracion de tipo de productos</label>
+                    <frontend_model>Empresas\FlujoComboProductos\Block\Adminhtml\System\Config\TipoProductoTabla</frontend_model>
+                    <backend_model>Empresas\FlujoComboProductos\Model\Config\Backend\UrlCombos</backend_model>
+                    <comment>
+                        <![CDATA[
+el uso de esta tabla es la siguiente: <br />
+<ul style="margin-left: 2em;">
+<li><small>Tipo de producto: tipo para definir estructura de codigo</small></li>
+</ul>
+<style>
+#row_landing_offer_2025_tipo_producto_value > .value{
+    width: 100% !important;
+}
+</style>
+]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="url_combos" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Urls con combos</label>
+                <field id="value" translate="label" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configuracion de url con combos empresas</label>
+                    <frontend_model>Empresas\FlujoComboProductos\Block\Adminhtml\System\Config\UrlCombos</frontend_model>
+                    <backend_model>Empresas\FlujoComboProductos\Model\Config\Backend\UrlCombos</backend_model>
+                    <comment>
+                        <![CDATA[
+el uso de esta tabla es la siguiente: <br />
+<ul style="margin-left: 2em;">
+<li><small>Request Path: Es la URL sin la (URL base)</small></li>
+<li><small>Combo: el combo que se vera en la url</small></li>
+<li><small>Tipo de producto: tipo para definir estructura de codigo</small></li>
+<li><small>Activar Email: activar funcionalidad de enviar correo a ejecutivo</small></li>
+<li><small>Correos Ejecutivo: podemos colocar varios correos si queremos hacer copias de correos separado por comas</small></li>
+<li><small>Email template: plantilla del correo que se enviara al crear la orden</small></li>
+<li><small>Titulo direccion checkout: Titulo que se mostrara en el checkout en la seccion de direcciones , si esta vacio mostrara por defecto (Direccion)</small></li>
+</ul>
+<style>
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+</style>
+]]>
+                    </comment>
+                </field>
+            </group>
+
+            <group id="success_page" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pagina de exito por producto</label>
+                <field id="value" translate="label" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configuracion de url con combos empresas</label>
+                    <frontend_model>Empresas\FlujoComboProductos\Block\Adminhtml\System\Config\SuccessPage</frontend_model>
+                    <backend_model>Empresas\FlujoComboProductos\Model\Config\Backend\UrlCombos</backend_model>
+                    <comment>
+                        <![CDATA[
+el uso de esta tabla es la siguiente: <br />
+<ul style="margin-left: 2em;">
+<li><small>Request Path: Es la URL sin la (URL base)</small></li>
+<li><small>Enable: Activar success page con estos campos</small></li>
+<li><small>Title: titulo para la success page</small></li>
+<li><small>Sub Title: sub titulo para la success page</small></li>
+<li><small>Description: descriccion para la success page</small></li>
+<li><small>Description two: segunda descriccion para la success page (texto con distinto color)</small></li>
+</ul>
+<p class="note"><span>
+Variables dentro de los campos: se debe colocar los siguientes valores si desea remplazar dentro del texto la siguiente informacion<br />
+</span></p>
+<ul style="margin-left: 2em;">
+<li><small>@tipo_producto: mostrara el tipo del producto. Ejemplo (Internet Dedicado , Starlink ...Etc)</small></li>
+<li><small>@email_usuario: Email del usuario que esta contratando el servicio</small></li>
+<li><small>@nombre_usuario: nombre completo del usuario que esta contratando el servicio</small></li>
+</ul>
+<style>
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+</style>
+]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="validate_qty_phone" translate="label" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Validacion de cantidad por producto</label>
+                <field id="value" translate="label" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configuracion de url con combos empresas</label>
+                    <frontend_model>Empresas\FlujoComboProductos\Block\Adminhtml\System\Config\ValidateQtyPhone</frontend_model>
+                    <backend_model>Empresas\FlujoComboProductos\Model\Config\Backend\ValidateQtyPhone</backend_model>
+                    <comment>
+                        <![CDATA[
+el uso de esta tabla es la siguiente: <br />
+<ul style="margin-left: 2em;">
+<li><small>Request Path: Es la URL sin la (URL base)</small></li>
+<li><small>Activar: Activar Validacion con estos campos</small></li>
+<li><small>Cantidad: Cantidad de la validacion</small></li>
+<li><small>Paso: Paso donde aplica la validacion</small></li>
+<li><small>Regla: conbinacion de SKU que deba cumplir la regla para ser aplicada</small></li>
+</ul>
+<style>
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+#row_landing_offer_2025_url_params_value > .value{
+    width: 100% !important;
+}
+</style>
+]]>
+                    </comment>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>

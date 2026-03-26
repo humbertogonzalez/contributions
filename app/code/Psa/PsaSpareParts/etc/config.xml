@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <psa_repuestos>
+            <general>
+                <title_repuestos>Repuestos</title_repuestos>
+                <repuestosTexto>Busca tus repuestos por número de serie.</repuestosTexto>
+                <titleSerie>INGRESA AQUÍ EL CODIGO DE SERIE DE TU PURIFICADOR</titleSerie>
+                <findSerie>Buscar Repuesto</findSerie>
+                <productRepuestos>Repuestos</productRepuestos>
+            </general>
+        </psa_repuestos>
+    </default>
+</config>

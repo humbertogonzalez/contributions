@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="empresas_flujocomboproductos_combos" resource="default" engine="innodb" comment="empresas_flujocomboproductos_combos Table">
+		<column xsi:type="int" name="combos_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="combos_id"/>
+		</constraint>
+		<column name="name" nullable="true" xsi:type="text" comment="name"/>
+		<column name="combo" nullable="true" xsi:type="longblob" comment="combo"/>
+		<column name="sort" nullable="true" xsi:type="text" comment="sort"/>
+	</table>
+    <table name="sales_order_address">
+        <column name="rut_empresa" nullable="true" xsi:type="varchar" comment="RUT de la empresa" length="255"/>
+    </table>
+    <table name="quote_address">
+        <column name="rut_empresa" nullable="true" xsi:type="varchar" comment="RUT de la empresa" length="255"/>
+    </table>
+</schema>

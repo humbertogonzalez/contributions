@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Empresas\FlujoComboProductos\Api\CombosRepositoryInterface" type="Empresas\FlujoComboProductos\Model\CombosRepository"/>
+	<preference for="Empresas\FlujoComboProductos\Api\GetComboManagementInterface" type="Empresas\FlujoComboProductos\Model\GetComboManagement"/>
+	<preference for="Empresas\FlujoComboProductos\Api\Data\CombosInterface" type="Empresas\FlujoComboProductos\Model\Combos"/>
+	<preference for="Empresas\FlujoComboProductos\Api\Data\CombosSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Empresas\FlujoComboProductos\Model\ResourceModel\Combos\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">empresas_flujocomboproductos_combos</argument>
+			<argument name="resourceModel" xsi:type="string">Empresas\FlujoComboProductos\Model\ResourceModel\Combos\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="empresas_flujocomboproductos_combos_listing_data_source" xsi:type="string">Empresas\FlujoComboProductos\Model\ResourceModel\Combos\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

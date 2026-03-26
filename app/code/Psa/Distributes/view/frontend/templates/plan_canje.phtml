@@ -1,0 +1,15 @@
+<?php
+   $getProduct = $this->getProduct();
+   $categoryId = $getProduct->getData()['category_ids']; //->getData()['path_ids'][2];
+  // if (in_array($categoryId[0],[7,12])):
+if ($getProduct->getCanje()) :
+?>
+        <p>
+        <br /><br />
+        <a href="/plan-canje">
+            <button class="action primary tocart">Plan Canje</button>
+            </a>
+        </p>
+<?php
+   endif;
+?>

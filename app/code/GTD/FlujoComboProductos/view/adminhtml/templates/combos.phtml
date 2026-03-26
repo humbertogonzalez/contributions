@@ -1,0 +1,210 @@
+<?php
+/** @var $block Empresas\FlujoComboProductos\Block\Adminhtml\Combos */
+
+$json = '';
+
+if ($block->getRequest()->getParam('combos_id')) {
+    $json = $block->getComboById($block->getRequest()->getParam('combos_id'))->getCombo();
+}
+?>
+
+<h1>Arrastrar y soltar vista de árbol con clonación y eliminación</h1>
+
+<div class="container-treeview">
+    <div class="left">
+        <h3>Vista de árbol</h3>
+        <ul id="treeview">
+            <li id="root" style="display: none;">Root</li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="add-products">
+            <h3>Artículos disponibles</h3>
+            <?php echo $this->getLayout()
+                ->createBlock("Empresas\FlujoComboProductos\Block\Adminhtml\Combos")
+                ->setTemplate("Empresas_FlujoComboProductos::product/list.phtml")
+                ->toHtml() ?>
+
+            <?= $block->getChildHtml('product_listing') ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'underscore',
+        'Magento_Ui/js/lib/view/utils/async',
+        'jquery/ui',
+    ], function (_, $) {
+        $(function () {
+            initializeDraggable($("#list li"));
+
+            $.async('.add-products', document.getElementById('html-body'), () => {
+                $(window).on('scroll', () => {
+                    const leftTreeviewHeight = $('.container-treeview .left').height();
+                    const rightTreeviewHeight = $('.container-treeview .add-products').height();
+                    const windowScrollTop = $(window).scrollTop();
+
+                    if( windowScrollTop > 300 && leftTreeviewHeight > rightTreeviewHeight) {
+                        $('.add-products').addClass('fixed');
+                    } else {
+                        $('.add-products').removeClass('fixed');
+                    }
+                })
+            })
+
+            <?php if($json):?>
+            // Cargar JSON y renderizar el árbol
+            function loadTreeFromJSON(jsonData) {
+                jsonData.forEach(function (item) {
+                    const $rootItem = createTreeItem(item);
+                    $("#treeview").append($rootItem);
+                });
+            }
+
+            // Función que crea un ítem de árbol desde el JSON
+            function createTreeItem(item) {
+                const $li = $("<li>").attr("data-sku", item.sku).attr("data-name", item.name);
+                const $span = $("<span>").text(`${item.name} (SKU: ${item.sku})`);
+                const $deleteButton = createDeleteButton();
+                $li.append($span).append($deleteButton);
+
+                if (item.children && item.children.length > 0) {
+                    const $ul = $("<ul>").addClass("tree-branch");
+                    item.children.forEach(function (child) {
+                        $ul.append(createTreeItem(child));
+                    });
+                    $li.append($ul);
+                }
+
+                $li.draggable({
+                    helper: "clone",
+                    revert: "invalid"
+                });
+                $deleteButton.on("click", function () {
+                    moveBranchToList($li);
+                });
+
+                return $li;
+            }
+
+            // Ejemplo de JSON que se cargaría al iniciar (esto puede venir de tu backend o ser una variable)
+            const savedJSON = <?php echo $json?>
+
+                // Cargar el árbol desde el JSON guardado
+                loadTreeFromJSON(savedJSON);
+            <?php endif;?>
+
+
+            $("#treeview").droppable({
+                accept: "#list li, #treeview li",
+                tolerance: "pointer",
+                drop: function (event, ui) {
+                    const $existing = ui.helper.data("alreadyDropped");
+                    if ($existing) return;
+                    ui.helper.data("alreadyDropped", true);
+
+                    const $item = $(ui.draggable).clone().removeClass("ui-draggable-dragging");
+                    $item.append(createDeleteButton()).draggable({
+                        helper: "clone",
+                        revert: "invalid",
+                    });
+                    $("#root").hide();
+                    $(this).append($item);
+                }
+            });
+
+            $(document).on("mouseover", "#treeview li", function () {
+                $(this).droppable({
+                    accept: "#list li, #treeview li",
+                    tolerance: "pointer",
+                    greedy: true,
+                    drop: function (event, ui) {
+                        const $existing = ui.helper.data("alreadyDropped");
+                        if ($existing) return;
+                        ui.helper.data("alreadyDropped", true);
+
+                        const $item = $(ui.draggable).clone().removeClass("ui-draggable-dragging");
+                        $item.append(createDeleteButton()).draggable({
+                            helper: "clone",
+                            revert: "invalid",
+                        });
+
+                        if ($(this).children("ul").length === 0) {
+                            $(this).append($("<ul>").addClass("tree-branch").append($item));
+                        } else {
+                            $(this).children("ul").append($item);
+                        }
+                    }
+                });
+            });
+
+            $(document).on("click", ".delete-btn", function () {
+                const $branch = $(this).closest("li");
+                moveBranchToList($branch);
+            });
+
+            // Selecciona el elemento que deseas observar
+            var treeview = document.getElementById("treeview");
+
+// Crea una instancia de MutationObserver
+            var observer = new MutationObserver(function (mutationsList) {
+                for (var mutation of mutationsList) {
+                    if (mutation.type === "childList" || mutation.type === "subtree") {
+                        updateJSON(); // Llama a tu función cuando haya cambios
+                    }
+                }
+            });
+
+// Configura qué tipo de cambios deseas observar
+            var config = {
+                childList: true, // Observa cambios en hijos directos
+                subtree: true,   // Observa cambios en descendientes
+            };
+
+// Comienza a observar el elemento
+            observer.observe(treeview, config);
+
+            function updateJSON() {
+                const treeJSON = traverse($("#treeview"));
+                const jsonString = JSON.stringify(treeJSON, null, 2);
+                const $textarea = $('textarea[name="combo"]');
+                $textarea.val(jsonString);
+                $textarea.trigger('change');
+
+            }
+
+            function traverse($node) {
+                return $node.children("li:not(#root)").map(function () {
+                    const $this = $(this);
+                    const sku = $this.clone().children(".delete-btn").remove().end().attr('data-sku');
+                    const name = $this.clone().children(".delete-btn").remove().end().attr('data-name');
+                    const children = $this.children("ul").length ? traverse($this.children("ul")) : [];
+                    return {name, sku, children};
+                }).get();
+            }
+
+
+        });
+
+        function initializeDraggable(elements) {
+            elements.draggable({helper: "clone", revert: "invalid"});
+        }
+
+        function createDeleteButton() {
+            return $("<button>").addClass("delete-btn").text("X");
+        }
+
+        function moveBranchToList($branch) {
+            $branch.find(".delete-btn").remove();
+            $branch.find("ul").each(function () {
+                $(this).children("li").each(function () {
+                    moveBranchToList($(this));
+                });
+                $(this).remove();
+            });
+            $branch.remove();
+        }
+
+    });
+</script>

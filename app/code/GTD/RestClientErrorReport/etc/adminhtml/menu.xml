@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Balloon_RestClientErrorReport::menu" title="Rest Client" module="Balloon_RestClientErrorReport" sortOrder="10"
+             parent="Balloon_Core::root" resource="Balloon_RestClientErrorReport::menu"/>
+        <add id="Balloon_RestClientErrorReport::grid" title="Log Report" module="Balloon_RestClientErrorReport" sortOrder="10"
+             parent="Balloon_RestClientErrorReport::menu" resource="Balloon_RestClientErrorReport::logs"
+             action="restlog/grid/index"/>
+    </menu>
+</config>

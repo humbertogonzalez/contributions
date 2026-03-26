@@ -1,0 +1,124 @@
+<?php
+
+use BalloonGroup\Distributes\Block\Change;
+
+/** @var Canje $block */
+$data = $block->getDataText();
+?>
+
+<style>
+    .page-title-wrapper {
+        display: none;
+    }
+</style>
+
+<!-- PLAN CANJE -->
+<?php if ($data['canje']) : ?>
+    <div class="header content">
+        <h1><?= $data['titleCanje'] ?></p>
+        </h1>
+        <p style="font-size: 18px">Entregando tu purificador vencido, podrás adquirir uno nuevo a un precio preferencial y renovar el compromiso con tu salud y el ambiente.
+        </p>
+        <hr>
+        <p>El <strong>fin de la vida útil de tu purificador* coincide con el plazo de su garantía</strong>. Una vez pasado ese período, se recomienda el recambio del producto ya que la prestación que puede brindar no es la óptima. Esto se debe a que los medios activos disminuyen su eficacia en la reducción de los contaminantes del agua.</p>
+        <p><em style="font-size: 12px;">*solo aplica a purificadores de agua para beber y cocinar.&nbsp;</em></p>
+        <p>En <strong>PSA recibimos los purificadores vencidos y nos encargamos de que todas las piezas del equipo reciban el tratamiento adecuado.</strong>&nbsp;Así, evitamos que se conviertan en desecho y dejamos juntos una huella positiva en el ambiente.&nbsp;</p>
+        <div class="center" style="margin: 20px auto"><img src="<?= $block->getViewFileUrl('BalloonGroup_Distributes::images/serie-dic-22.jpg'); ?>" /></div>
+        <br><br>
+        <h4 style="text-transform: none; margin: auto;"><?= $data['canjeTexto'] ?></h4>
+        <p>Aquí podrás<strong> buscar los datos de tu Distribuidor Independiente PSA y acceder al Plan Canje</strong> para obtener tu nuevo purificador a un precio diferencial.&nbsp;</p>
+        <hr>
+        <br><br>
+        <div class="col-md-6">
+            <form name="addData" method="post" id="addData" class="form" action="" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>" data-mage-init='{"validation":{}}'>
+                <fieldset class="fieldset">
+                    <fieldset class="fieldset row">
+                        <div class="fields col-md-6">
+                            <div class="field serie required">
+                                <label class="label" for="title">
+                                    <span>
+                                        <?= $data['titleSerie'] ?>
+                                        <!-- <?= $block->escapeHtmlAttr(__('Serie')) ?> -->
+                                    </span></label>
+                                <div class="control">
+                                    <input name="serie" id="serie" title="Serie" value="" class="input-text" type="text" data-validate="{required:true, 'validate-alphanum':true}">
+                                </div>
+                            </div>
+                            <div class="fields ">
+                                <button id="find_product_by_serial" type="submit" class="action submit primary" title="Enviar">
+                                    <span>
+                                        <?= $data['findSerie'] ?>
+                                        <!-- <?= $block->escapeHtmlAttr(__('Send')) ?> -->
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </form>
+        </div>
+        <!-- <div>
+            <img src="<?= $block->getViewFileUrl('BalloonGroup_Distributes::images/repuesto.png'); ?>">
+        </div> -->
+        <div id="change-result" class="col-md-5" data-bind="scope:'change_results'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </div>
+    <div id="result-products" data-bind="scope:'change_products'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+    <hr>
+
+<?php else : ?>
+    <!-- REPUESTOS -->
+    <div class="header content">
+        <h1><?= $data['titleCanje'] ?></p>
+        </h1>
+        <div class="center" style="margin: 20px auto"><img src="<?= $block->getViewFileUrl('BalloonGroup_Distributes::images/repuesto.png'); ?>" /></div>
+        <br><br>
+        <hr>
+        <br><br>
+        <div class="col-md-6">
+            <form name="addData" method="post" id="addData" class="form" action="" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>" data-mage-init='{"validation":{}}'>
+                <fieldset class="fieldset">
+                    <fieldset class="fieldset row">
+                        <div class="fields col-md-6">
+                            <div class="field serie required">
+                                <label class="label" for="title">
+                                    <span>
+                                        <?= $data['titleSerie'] ?>
+                                        <!-- <?= $block->escapeHtmlAttr(__('Serie')) ?> -->
+                                    </span></label>
+                                <div class="control">
+                                    <input name="serie" id="serie" title="Serie" value="" class="input-text" type="text" data-validate="{required:true, 'validate-alphanum':true}">
+                                </div>
+                            </div>
+                            <div class="fields ">
+                                <button id="find_product_by_serial" type="submit" class="action submit primary" title="Enviar">
+                                    <span>
+                                        <?= $data['findSerie'] ?>
+                                        <!-- <?= $block->escapeHtmlAttr(__('Send')) ?> -->
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </form>
+        </div>
+        <div id="change-result" class="col-md-5" data-bind="scope:'change_results'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </div>
+    <div id="result-products" data-bind="scope:'change_products'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+    {
+    "#change-result": {
+        "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    }
+}
+</script>

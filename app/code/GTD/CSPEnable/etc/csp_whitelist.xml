@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="newrelic_analytics" type="host">js-agent.newrelic.com</value>
+                <value id="newrelic_bam" type="host">bam.nr-data.net</value>
+                <value id="pagoautomaticocontarjetas" type="host">*.pagoautomaticocontarjetas.cl</value>
+                <value id="facebook_connect" type="host">connect.facebook.net</value>
+                <value id="clarity" type="host">*.clarity.ms</value>
+                <value id="googletagmanager" type="host">*.googletagmanager.com</value>
+                <value id="licdn" type="host">*.licdn.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="google-cl" type="host">*.google.cl</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="hubspot" type="host">*.hubspot.com</value>
+                <value id="hscollectedforms" type="host">*.hscollectedforms.net</value>
+                <value id="usemessages" type="host">*.usemessages.com</value>
+                <value id="hsadspixel" type="host">*.hsadspixel.net</value>
+                <value id="hs_banner" type="host">*.hs-banner.com</value>
+                <value id="hs_analytics" type="host">*.hs-analytics.net</value>
+                <value id="hotjar.io" type="host">*.hotjar.io</value>
+                <value id="bat.bing.com" type="host">*.bing.com</value>
+                <value id="hsappstatic" type="host">*.hsappstatic.net</value>
+            </values>
+        </policy>
+        <policy id="form-action">
+            <values>
+                <value id="transbank" type="host">*.transbank.cl</value>
+                <value id="pagoautomaticocontarjetas" type="host">*.pagoautomaticocontarjetas.cl</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="bat.bing.com" type="host">*.bing.com</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="newrelic_bam" type="host">bam.nr-data.net</value>
+                <value id="pagoautomaticocontarjetas" type="host">*.pagoautomaticocontarjetas.cl</value>
+                <value id="clarity" type="host">*.clarity.ms</value>
+                <value id="googletagmanager" type="host">*.googletagmanager.com</value>
+                <value id="google" type="host">*.google.com</value>
+                <value id="linkedin" type="host">*.linkedin.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="google-cl" type="host">*.google.cl</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="hotjar.io" type="host">*.hotjar.io</value>
+                <value id="ws.hotjar.io" type="host">wss://ws.hotjar.com</value>
+                <value id="hubapi" type="host">*.hubapi.com</value>
+                <value id="hubspot" type="host">*.hubspot.com</value>
+                <value id="hscollectedforms" type="host">*.hscollectedforms.net</value>
+                <value id="usemessages" type="host">*.usemessages.com</value>
+                <value id="hsadspixel" type="host">*.hsadspixel.net</value>
+                <value id="hs_banner" type="host">*.hs-banner.com</value>
+                <value id="hs_analytics" type="host">*.hs-analytics.net</value>
+                <value id="tiktokw" type="host">*.tiktokw.us</value>
+                <value id="hsappstatic" type="host">*.hsappstatic.net</value>
+                <value id="bat.bing.com" type="host">*.bing.com</value>
+            </values>
+        </policy>
+         <policy id="frame-src">
+            <values>
+                <value id="doubleclick" type="host">td.doubleclick.net</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="bat.bing.com" type="host">*.bing.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="gtd-cl" type="host">*.gtd.cl</value>
+                <value id="linkedin" type="host">*.linkedin.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="clarity" type="host">*.clarity.ms</value>
+                <value id="google-cl" type="host">*.google.cl</value>
+                <value id="bing" type="host">*.bing.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="hsforms" type="host">*.hsforms.com</value>
+                <value id="hubspot" type="host">*.hubspot.com</value>
+            </values>
+        </policy>
+        <policy id="style-src">
+            <values>
+                <value id="googletagmanager" type="host">*.googletagmanager.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hs_scripts" type="host">*.hs-scripts.com</value>
+                <value id="tiktok" type="host">*.tiktok.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="google_co" type="host">*.google.co.ve</value>
+                <value id="bat.bing.com" type="host">*.bing.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

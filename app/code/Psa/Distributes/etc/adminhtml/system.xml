@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="balloongroup" translate="label" sortOrder="10">
+            <label>PSA Config</label>
+        </tab>
+        <section id="distributes" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Webservices</label>
+            <tab>balloongroup</tab>
+            <resource>BalloonGroup_Distributes::distributes_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration WebServices</label>
+
+                <field id="hostToken" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Host WS Token</label>
+                    <comment>Host WS Token (Ej:https://test-iam.psa.com.ar/)</comment>
+                </field>
+                <field id="apiToken" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Api URL</label>
+                    <comment>Api URL (Ej:auth/realms/IPSAEM/protocol/openid-connect/token)</comment>
+                </field>
+                <field id="hostData" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Host WS Data</label>
+                    <comment>Host WS Data (Ej:https://test-em.psa.com.ar/tiendapsa/)</comment>
+                </field>
+                <field id="endPointDist" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>EndPoint Distribuidores</label>
+                    <comment>EndPoint Distribuidores (Ej:diptop50/)</comment>
+                </field>
+                <field id="endPointProdSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>EndPoint Producto Serie</label>
+                    <comment>EndPoint Producto Serie (Ej:unidad/)</comment>
+                </field>
+                <field id="endPointDistSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>EndPoint Distribuidor Serie</label>
+                    <comment>EndPoint Distribuidor Serie (Ej:dip/)</comment>
+                </field>
+                <field id="cron_schedule" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Expression</label>
+                    <comment>Expresión de ejecución del Cron (Default: 0 9,14,20 * * * [Horas 9, 14 y 20 de cada día])</comment>
+                </field>
+                <field id="grant_type" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Grant Type</label>
+                    <comment>(Ej:password)</comment>
+                </field>
+                <field id="client_secret" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Client Secret</label>
+                    <comment>(Ej:5c06ae93-3502-4577-9586-ecdb57b715e9)</comment>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>User Name</label>
+                    <comment>(Ej:magento)</comment>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Password</label>
+                    <comment>(Ej:b8e065255d5326ea3cf1f85b0dd764f3)</comment>
+                </field>
+                <field id="client_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Client Id</label>
+                    <comment>(Ej:magento)</comment>
+                </field>
+                
+            </group>
+            <group id="textEdit" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Textos editables</label>
+                <field id="titleCanje" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo Canje</label>
+                    <comment>Ej:PLAN CANJE PSA / CANJEA TU PRODUCTO</comment>
+                </field>
+                <field id="canjeTexto" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Texto Canje</label>
+                    <comment>Ej: Ser usuario de nuestros productos tiene su beneficio.
+Si ya tenes un producto de la marca, y el producto ya esta vencido, obtendrás un descuento por renovarlo.
+Es muy fácil, cada producto de PSA tiene debajo un numero de serie, con el mismo podras realizar el canje de tu unidad vencida. Los canjes solo se realizan por la categoría de producto que tengas. Por ejemplo, un purificador de agua solo se podrá canjear por otro purificador de agua
+. Ingresa en esta sección y obtene tu beneficio.</comment>
+                </field>
+                <field id="titleSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo Serie</label>
+                    <comment>Ej:INGRESA AQUÍ EL CODIGO DE SERIE DE TU PURIFICADOR VENCIDO</comment>
+                </field>
+                <field id="findSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Botón Buscar</label>
+                    <comment>Ej:Buscar Serie</comment>
+                </field>
+                <field id="productCanje" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo de productos para Canje</label>
+                    <comment>Ej:Productos de Canje</comment>
+                </field>
+                <field id="withoutDealer" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sin distribuidor</label>
+                    <comment>Ej:Para este número de serie, no encontramos Distribuidor asociado, pero antes de finalizar la compra, podrás elegir uno según tu conveniencia en el mapa</comment>
+                </field>
+                <field id="withoutSerial" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sin Serial</label>
+                    <comment>Ej:Para este número de serie, no encontramos Productos asociados, podrás elegir un purificador de otra marca, En el Plan Canje </comment>
+                </field>
+            </group>
+        </section>
+        <section id="distributes_canje" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Canje</label>
+            <tab>balloongroup</tab>
+            <resource>BalloonGroup_Distributes::distributes_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Configuration</label>
+
+                <field id="discount" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Descuento aplicado</label>
+                    <comment>Porcentaje</comment>
+                    <validate>integer</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

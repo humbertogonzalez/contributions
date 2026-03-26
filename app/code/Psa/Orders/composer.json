@@ -1,0 +1,20 @@
+{
+  "name": "balloon-group/module-orders",
+  "version": "1.0.0",
+  "description": "Process asocciates to orders",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "BalloonGroup\\Orders\\": ""
+    }
+  }
+}

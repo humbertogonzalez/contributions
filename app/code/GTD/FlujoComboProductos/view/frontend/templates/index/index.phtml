@@ -1,0 +1,13 @@
+<?php
+/* @var $block Empresas\FlujoComboProductos\Block\Index\Index */
+?>
+
+<script type="text/javascript">
+    window.enviromentData = <?php echo json_encode($block->getVariablesEntorno())?>;
+</script>
+
+<div id="react-root"></div>
+
+<script type="text/javascript">
+    require(['Empresas_React/js/react-components/dist/bundle']);
+</script>

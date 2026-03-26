@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="styles"/>
+	<body>
+		<referenceContainer name="content">
+			<uiComponent name="empresas_flujocomboproductos_combos_form"/>
+            <block class="Empresas\FlujoComboProductos\Block\Adminhtml\Combos" name="combos" as="combos" template="Empresas_FlujoComboProductos::combos.phtml">
+                <uiComponent name="product_listing"/>
+            </block>
+        </referenceContainer>
+	</body>
+</page>

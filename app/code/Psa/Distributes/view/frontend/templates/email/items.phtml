@@ -1,0 +1,31 @@
+<?php
+/** @var \Magento\Backend\Block\Template $block */
+$orderData = $this->getData('orderdata');
+$orderHelper = $this->helper(\BalloonGroup\Distributes\Helper\Order::class);
+$getOrder = $orderHelper->getOrderData($orderData);
+$items = $getOrder->getAllItems();
+$discount = $getOrder->getDiscountAmount();
+$grandTotal = $getOrder->getGrandTotal();
+?>
+
+<tr>
+    <td align="center" style="font-family:Verdana, Geneva, sans-serif; font-size:1em; color:steelblue; line-height:1.2em; text-align:center;">
+        Detalle del pedido
+
+    </td>
+</tr>
+<tr>
+    <td width="10">&nbsp;</td>
+</tr>
+<tr>
+    <td align="center" style="font-family:Verdana, Geneva, sans-serif; font-size:1.0em; color:#777575;line-height:1.2em; text-align:center">
+    <?php foreach ($items as $_item) : ?>
+            <?= $block->escapeHtml($_item->getName()) ?>  .... x<?= $block->escapeHtml($_item->getQty()) ?>  <?= $orderHelper->getFormattedPrice($_item->getPrice()); ?><br>
+        <?php endforeach; ?><br>
+        <?php if (!empty($discount)) : ?>
+            Descuento ... <?php echo $orderHelper->getFormattedPrice($discount) ?>.-
+        <br>
+        <?php endif; ?>
+        Total ... <?php echo $orderHelper->getFormattedPrice($grandTotal) ?>.-
+    </td>
+</tr>

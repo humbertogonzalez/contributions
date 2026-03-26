@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="balloongroup" translate="label" sortOrder="10">
+            <label>PSA Config</label>
+        </tab>
+        <section id="psa_repuestos" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Repuestos</label>
+            <tab>balloongroup</tab>
+            <resource>BalloonGroup_Distributes::distributes_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Textos</label>
+                <field id="title_repuestos" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo Repuestos</label>
+                    <comment>Ej: Repuestos</comment>
+                </field>
+                <field id="repuestosTexto" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Texto Canje</label>
+                    <comment>Ej: Busca tus repuestos por número de serial.</comment>
+                </field>
+                <field id="titleSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo Serie</label>
+                    <comment>Ej:INGRESA AQUÍ EL CODIGO DE SERIE DE TU PURIFICADOR</comment>
+                </field>
+                <field id="findSerie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Botón Buscar</label>
+                    <comment>Ej:Buscar Repuesto</comment>
+                </field>
+                <field id="productRepuestos" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Titulo de productos para Repuestos</label>
+                    <comment>Ej:Repuestos</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

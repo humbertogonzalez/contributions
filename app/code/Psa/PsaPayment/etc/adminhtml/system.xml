@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="atm_psa" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>ATM Psa Payment Method</label>
+                <field id="active" translate="label comment" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable the payment method</comment>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ATM Psa Payment</label>
+                    <comment>title of payment methog that render in front</comment>
+                </field>
+                <field id="gateway_url" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>ATM URL</label>
+                    <comment>Url to connect with ATM</comment>
+                </field>
+                <field id="client_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Client ID</label>
+                    <comment>The client ID is required to connect to the API. Please make sure you have the correct client ID before attempting to connect. For more information on how to use this ID, please refer to the documentation for the corresponding API.</comment>
+                </field>
+                <field id="public_key" translate="label comment" type="password" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>ATM Public Key</label>
+                    <comment>The Public Key Used for Connect to API</comment>
+                </field>
+                <field id="private_key" translate="label comment" type="password" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>ATM Private Key</label>
+                    <comment>The Private Key Used for Connect to API</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

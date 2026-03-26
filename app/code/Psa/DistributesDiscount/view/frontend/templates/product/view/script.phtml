@@ -1,0 +1,23 @@
+<script>
+    function checkCanje() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const canje = urlParams.get('canje')
+        if (canje) {
+            const input_canje = document.createElement("input");
+            input_canje.setAttribute('name', 'canje');
+            input_canje.setAttribute('type', 'hidden');
+            input_canje.setAttribute('value', '1');
+            document.getElementById('product_addtocart_form').appendChild(input_canje);
+            const dipId = urlParams.get('dip')
+            if (dipId) {
+                const input_dip = document.createElement("input");
+                input_dip.setAttribute('name', 'dip');
+                input_dip.setAttribute('type', 'hidden');
+                input_dip.setAttribute('value', dipId);
+                document.getElementById('product_addtocart_form').appendChild(input_dip);
+            }
+        }
+    }
+    checkCanje();
+</script>

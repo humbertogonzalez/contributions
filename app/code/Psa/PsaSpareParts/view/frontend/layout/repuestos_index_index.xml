@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="BalloonGroup_Distributes::css/change.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="BalloonGroup\PsaSpareParts\Block\Repuestos" name="psa_repuestos" template="BalloonGroup_Distributes::change/index.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="types" xsi:type="array"/>
+                        <item name="components" xsi:type="array">
+                            <item name="change_results" xsi:type="array">
+                                <item name="component" xsi:type="string">BalloonGroup_Distributes/js/view/change</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">BalloonGroup_Distributes/view/change</item>
+                                </item>
+                            </item>
+                            <item name="change_products" xsi:type="array">
+                                <item name="component" xsi:type="string">BalloonGroup_Distributes/js/view/change/products</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="provider" xsi:type="string">change_results</item>
+                                    <item name="template" xsi:type="string">BalloonGroup_Distributes/view/change/products</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

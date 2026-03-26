@@ -49,7 +49,6 @@ class State extends \Magento\Sales\Model\ResourceModel\Order\Handler\State
 
     public function check(Order $order)
     {
-        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->info('> Update Status de pedido');
         $currentState = $order->getState();
         $currentDate = date("Y-m-d H:i:s");
         $completeFlag = false;
@@ -85,9 +84,6 @@ class State extends \Magento\Sales\Model\ResourceModel\Order\Handler\State
             }
         }
 
-        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->info('> Pedido: ' . $order->getIncrementId());
-        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->info('> Status: ' . $order->getStatus());
-
         if ($order->getEntityId() && in_array($order->getStatus(), $this->statusCodes)) {
             $this->updateOrderStatus($order->getEntityId(), $order->getStatus());
 
@@ -101,7 +97,6 @@ class State extends \Magento\Sales\Model\ResourceModel\Order\Handler\State
             $orderObj = $this->orderRepository->get($order->getEntityId());
 
             if($sendFlag) {
-                \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->info("> Enviando correo");
                 $this->sender->send($orderObj, true);
             }
         }

@@ -1,0 +1,64 @@
+<div class="content">
+    <div if="loading" class="loader-content">
+        <div class="loader">
+            <span></span>
+        </div>
+    </div>
+    <div ifnot="loading" class="content-inner">
+        <!-- ko if: dipInfo() -->
+        <div class="details">
+            <!-- ko if: !dipInfo().resultProduct -->
+            <div >
+                <div class="page-title product">
+                    <h3 class="page-title">
+                            <span >
+                                <p style="margin-top: 0rem;margin-bottom: 2rem;">
+                                    <b><span data-bind="text: dipInfo().resultWOProduct"> <a href="/purificadores-de-agua.html?canje=1">AQUI</a></span></b>
+                                </p>
+                            </span>
+                    </h3>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: dipInfo().resultProduct -->
+            <p >
+                SKU <b><span data-bind="text: dipInfo().codeProduct"></span></b>
+            </p>
+            <p >
+                Nombre del producto <b><span data-bind="text: dipInfo().descripcion"></span></b>
+            </p>
+            <p>
+                Fecha de Vencimiento: <b><span data-bind="text: dipInfo().fecha"></span></b>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: dipInfo().resultDistributor -->
+            <p>
+                <span>Distribuidor: <b data-bind="text: dipInfo().nombre"></b></span>
+            </p>
+            <p>
+                <span>Email: <b data-bind="text: dipInfo().email"></b></span>
+            </p>
+            <p>
+                <span>Teléfono: <b data-bind="text: dipInfo().telefono"></b></span>
+            </p>
+            <br>
+            <!-- /ko -->
+            <!-- ko if: !dipInfo().resultDistributor  -->
+            <p>
+                <span> <b data-bind="text: dipInfo().codeWODistributor"></b></span>
+            </p>
+            <!-- /ko -->
+            
+        </div>
+        <!-- /ko -->
+        <!-- ko if: error()  -->
+            <h3 class="page-title">
+                <span >
+                    <p style="margin-top: 0rem;margin-bottom: 2rem;">
+                        <b><span>Para este número de serie, no encontramos Productos asociados, podrás elegir un purificador de otra marca, En el Plan Canje <a href="/purificadores-de-agua.html?canje=1">AQUI</a></span></b>
+                    </p>
+                </span>
+            </h3>
+        <!-- /ko -->
+    </div>
+</div>

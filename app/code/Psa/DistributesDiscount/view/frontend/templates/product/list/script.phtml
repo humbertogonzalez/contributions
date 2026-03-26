@@ -1,0 +1,30 @@
+<script>
+    require(['jquery', 'domReady'], function ($) {
+        function checkCanje() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const canje = urlParams.get('canje');
+            if (canje) {
+                const products = document.querySelectorAll('[data-role="tocart-form"]');
+                [...products].forEach((product) => {
+                    let input_canje = document.createElement("input");
+                    input_canje.setAttribute('name', 'canje');
+                    input_canje.setAttribute('type', 'hidden');
+                    input_canje.setAttribute('value', '1');
+                    product.appendChild(input_canje);
+
+                    let input_purificadores = document.createElement("input");
+                    input_purificadores.setAttribute('name', 'purificador');
+                    input_purificadores.setAttribute('type', 'hidden');
+                    input_purificadores.setAttribute('value', '1');
+                    product.appendChild(input_purificadores);
+                });
+                const productImagelinks = document.querySelectorAll('.product_image a');
+                [...productImagelinks].forEach((imageLink) => {
+                    imageLink.href += '?canje=1&e=1';
+                });
+            }
+        }
+        checkCanje();
+    })
+</script>

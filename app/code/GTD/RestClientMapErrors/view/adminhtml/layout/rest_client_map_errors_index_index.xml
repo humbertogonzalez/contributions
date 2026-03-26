@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Balloon_RestClientMapErrors::css/lib/vuetify.min.css"/>
+    </head>
+    <body>
+
+        <referenceContainer name="backend.page">
+            <container name="page.wrapper.map.errors" as="page_wrapper_map_errors" htmlTag="div" htmlClass="page-wrapper page-wrapper-map-errors"/>
+        </referenceContainer>
+        <move element="page.wrapper" destination="page.wrapper.map.errors" after="-" />
+        <referenceContainer name="content">
+            <block class="Balloon\RestClientMapErrors\Block\Adminhtml\Grid" name="error_map_rest_client" template="Balloon_RestClientMapErrors::view/grid.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="types" xsi:type="array"/>
+                        <item name="components" xsi:type="array">
+                            <item name="map_errors_content" xsi:type="array">
+                                <item name="component" xsi:type="string">Balloon_RestClientMapErrors/js/view</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Balloon_RestClientMapErrors/view</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
