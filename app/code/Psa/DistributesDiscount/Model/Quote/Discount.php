@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BalloonGroup\DistributesDiscount\Model\Quote;
+namespace Psa\DistributesDiscount\Model\Quote;
 
 use Magento\Framework\Event\ManagerInterface;
 use Magento\Framework\Pricing\PriceCurrencyInterface;
@@ -12,8 +12,8 @@ use Magento\Quote\Model\Quote\Address\Total;
 use Magento\Quote\Model\Quote\Address\Total\AbstractTotal;
 use Magento\SalesRule\Model\Validator;
 use Magento\Customer\Model\Session;
-use BalloonGroup\Distributes\Model\SerialFactory;
-use BalloonGroup\Distributes\Model\ResourceModel\Serial;
+use Psa\Distributes\Model\SerialFactory;
+use Psa\Distributes\Model\ResourceModel\Serial;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Checkout\Model\Session as CheckoutSession;

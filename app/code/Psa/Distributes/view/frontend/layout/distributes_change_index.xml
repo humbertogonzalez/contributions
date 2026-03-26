@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="BalloonGroup\Distributes\Block\Change" name="change_by_serial" template="BalloonGroup_Distributes::change/index.phtml">
+            <block class="Psa\Distributes\Block\Change" name="change_by_serial" template="BalloonGroup_Distributes::change/index.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="types" xsi:type="array"/>

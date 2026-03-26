@@ -1,7 +1,7 @@
 <?php
 $_helper = $this->helper(\WeltPixel\ThankYouPage\Helper\Data::class);
 $orderData = $this->getData('orderdata');
-$orderHelper = $this->helper(\BalloonGroup\Distributes\Helper\Order::class);
+$orderHelper = $this->helper(\Psa\Distributes\Helper\Order::class);
 $order = $orderHelper->getOrderData($orderData);
 $shipingAddress = $order->getShippingAddress();
 $firstname = $shipingAddress->getFirstname();

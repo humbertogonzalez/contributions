@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\PsaSpareParts\Plugin\Checkout;
+namespace Psa\PsaSpareParts\Plugin\Checkout;
 
 use Magento\Quote\Api\Data\AddressInterface;
 use Magento\Quote\Model\QuoteRepository;

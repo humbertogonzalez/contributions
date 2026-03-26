@@ -1,8 +1,8 @@
 <?php
 
-namespace BalloonGroup\PsaSpareParts\Controller\ProductsBySerial;
+namespace Psa\PsaSpareParts\Controller\ProductsBySerial;
 
-use BalloonGroup\Distributes\Controller\Change\ProductsBySerial;
+use Psa\Distributes\Controller\Change\ProductsBySerial;
 use Magento\Catalog\Model\Product\Attribute\Source\Status;
 use Magento\Framework\Exception\NoSuchEntityException;
 

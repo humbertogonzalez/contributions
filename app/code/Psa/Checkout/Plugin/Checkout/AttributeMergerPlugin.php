@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BalloonGroup\Checkout\Plugin\Checkout;
+namespace Psa\Checkout\Plugin\Checkout;
 
 use Magento\Checkout\Block\Checkout\AttributeMerger;
 

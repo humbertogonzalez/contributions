@@ -5,7 +5,7 @@
  * @category BallonGroup
  * @module BalloonGroup/PsaPayment
  */
-namespace BalloonGroup\PsaPayment\Plugin;
+namespace Psa\PsaPayment\Plugin;
 
 use Magento\Sales\Api\Data\OrderExtensionFactory;
 use Magento\Sales\Api\Data\OrderInterface;
@@ -14,7 +14,7 @@ use Magento\Sales\Api\OrderRepositoryInterface;
 
 /**
  * Class OrderRepositoryPlugin - Plugin to add custom attributes to API Orders
- * @package  BalloonGroup\PsaPayment\Plugin
+ * @package  Psa\PsaPayment\Plugin
  */
 class OrderRepositoryPlugin
 {

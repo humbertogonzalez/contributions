@@ -1,9 +1,9 @@
 <?php
-namespace BalloonGroup\Distributes\Block;
+namespace Psa\Distributes\Block;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\View\Element\Template;
-use BalloonGroup\Distributes\Helper\Data;
+use Psa\Distributes\Helper\Data;
 
 class Change extends Template
 {

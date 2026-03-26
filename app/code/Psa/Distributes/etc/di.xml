@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-  <preference for="Amasty\Storelocator\Model\ResourceModel\Location\Collection" type="BalloonGroup\Distributes\Model\ResourceModel\Location\Collection"/>
-  <preference for="Amasty\Cart\Controller\Cart\Add" type="BalloonGroup\Distributes\Controller\Cart\Add" />
+  <preference for="Amasty\Storelocator\Model\ResourceModel\Location\Collection" type="Psa\Distributes\Model\ResourceModel\Location\Collection"/>
+  <preference for="Amasty\Cart\Controller\Cart\Add" type="Psa\Distributes\Controller\Cart\Add" />
   <type name="Magento\Framework\Console\CommandListInterface">
     <arguments>
         <argument name="commands" xsi:type="array">
             <item name="balloon_core_emailsender" xsi:type="object">
-                BalloonGroup\Distributes\Console\Command\EmailSender
+                Psa\Distributes\Console\Command\EmailSender
             </item>
             <item name="balloon_core_processdealers" xsi:type="object">
-                BalloonGroup\Distributes\Console\Command\Dealers
+                Psa\Distributes\Console\Command\Dealers
             </item>
         </argument>
     </arguments>

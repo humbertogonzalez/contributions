@@ -1,13 +1,13 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Model\Ui;
+namespace Psa\PsaPayment\Model\Ui;
 
-use BalloonGroup\PsaPayment\Model\Config\Config;
+use Psa\PsaPayment\Model\Config\Config;
 use Magento\Framework\View\Asset\Repository;
 
 /**
  * Class ConfigProvider - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Model\Ui
+ * @package  Psa\PsaPayment\Model\Ui
  */
 class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {

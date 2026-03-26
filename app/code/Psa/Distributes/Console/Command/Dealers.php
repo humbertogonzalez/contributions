@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BalloonGroup\Distributes\Console\Command;
+namespace Psa\Distributes\Console\Command;
 
 use Exception;
 use Magento\Framework\App\Area;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Magento\Framework\App\State;
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use BalloonGroup\Distributes\Helper\Dealers\Process;
+use Psa\Distributes\Helper\Dealers\Process;
 use Psr\Log\LoggerInterface;
 
 class Dealers extends Command

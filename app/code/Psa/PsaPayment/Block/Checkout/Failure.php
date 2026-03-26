@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Block\Checkout;
+namespace Psa\PsaPayment\Block\Checkout;
 
 use Exception;
 use Magento\Checkout\Model\Session;
@@ -10,7 +10,7 @@ use Magento\Quote\Model\QuoteFactory;
 
 /**
  * Class Failure - Brief description of class objective
- * @package  code\BalloonGroup\PsaPayment\Block\Checkout
+ * @package  code\Psa\PsaPayment\Block\Checkout
  */
 class Failure extends Template
 {

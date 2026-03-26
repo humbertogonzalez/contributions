@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\PsaSpareParts\Controller\Index;
+namespace Psa\PsaSpareParts\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;

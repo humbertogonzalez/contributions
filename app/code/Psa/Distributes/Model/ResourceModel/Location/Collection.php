@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace BalloonGroup\Distributes\Model\ResourceModel\Location;
+namespace Psa\Distributes\Model\ResourceModel\Location;
 
 use Magento\Store\Model\Store;
 

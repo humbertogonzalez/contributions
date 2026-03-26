@@ -1,9 +1,9 @@
 <?php
-namespace BalloonGroup\PsaSpareParts\Block;
+namespace Psa\PsaSpareParts\Block;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\View\Element\Template;
-use BalloonGroup\Distributes\Helper\Data;
+use Psa\Distributes\Helper\Data;
 
 class Repuestos extends Template
 {

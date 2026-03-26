@@ -1,12 +1,12 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Block;
+namespace Psa\PsaPayment\Block;
 
 use Magento\Framework\Phrase;
 
 /**
  * Class Info - Brief description of class objective
- * @package  code\BalloonGroup\PsaPayment\Block
+ * @package  code\Psa\PsaPayment\Block
  */
 class Info extends \Magento\Payment\Block\ConfigurableInfo
 {

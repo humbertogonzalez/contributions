@@ -1,15 +1,15 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Model\Curl;
+namespace Psa\PsaPayment\Model\Curl;
 
-use BalloonGroup\PsaPayment\Model\Config\Config;
+use Psa\PsaPayment\Model\Config\Config;
 use Exception;
 use Magento\Framework\HTTP\Client\Curl;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class RestClient - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Model\Curl
+ * @package  Psa\PsaPayment\Model\Curl
  */
 class RestClient
 {

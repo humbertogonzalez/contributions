@@ -4,7 +4,7 @@
     <default>
         <payment>
             <atm_psa>
-                <model>BalloonGroup\PsaPayment\Model\Payment</model>
+                <model>Psa\PsaPayment\Model\Payment</model>
                 <title>ATM Psa Payment</title>
                 <active>1</active>
                 <order_status>processing</order_status>

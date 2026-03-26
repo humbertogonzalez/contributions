@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace BalloonGroup\Distributes\Controller\Index;
+namespace Psa\Distributes\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
-use BalloonGroup\PsaPayment\Model\Config\Config;
+use Psa\PsaPayment\Model\Config\Config;
 
 class Test extends Action
 {

@@ -1,7 +1,7 @@
 <?php
 /** @var \Magento\Backend\Block\Template $block */
 $orderData = $this->getData('orderdata');
-$orderHelper = $this->helper(\BalloonGroup\Distributes\Helper\Order::class);
+$orderHelper = $this->helper(\Psa\Distributes\Helper\Order::class);
 $getOrder = $orderHelper->getOrderData($orderData);
 $items = $getOrder->getAllItems();
 $discount = $getOrder->getDiscountAmount();

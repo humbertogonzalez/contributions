@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <type name="Magento\Checkout\Api\ShippingInformationManagementInterface">
-        <plugin name="set_default_shipping_address" type="BalloonGroup\PsaSpareParts\Plugin\Checkout\SetDefaultShippingAddressPlugin" sortOrder="1"/>
+        <plugin name="set_default_shipping_address" type="Psa\PsaSpareParts\Plugin\Checkout\SetDefaultShippingAddressPlugin" sortOrder="1"/>
     </type>
 </config>
 

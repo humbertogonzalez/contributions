@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Controller\Change;
+namespace Psa\Distributes\Controller\Change;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;

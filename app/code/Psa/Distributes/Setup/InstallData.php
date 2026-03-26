@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Setup;
+namespace Psa\Distributes\Setup;
 
 use Magento\Catalog\Model\ResourceModel\Eav\Attribute;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
@@ -29,7 +29,7 @@ class InstallData implements InstallDataInterface
                 'label' => 'Productos de canje',
                 'type' => 'text',
                 'input' => 'multiselect',
-                'source' => 'BalloonGroup\Distributes\Model\Config\Product\Skus',
+                'source' => 'Psa\Distributes\Model\Config\Product\Skus',
                 'required' => false,
                 'sort_order' => 30,
                 'global' => ScopedAttributeInterface::SCOPE_STORE,

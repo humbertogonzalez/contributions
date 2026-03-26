@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace BalloonGroup\Distributes\Helper;
+namespace Psa\Distributes\Helper;
 
 use Magento\Backend\Model\UrlInterface;
 use Magento\Framework\App\Area;

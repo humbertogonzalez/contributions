@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BalloonGroup\Distributes\Helper;
+namespace Psa\Distributes\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\Exception\InputException;

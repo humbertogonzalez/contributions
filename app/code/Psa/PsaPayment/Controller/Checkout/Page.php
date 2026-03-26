@@ -1,10 +1,10 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Controller\Checkout;
+namespace Psa\PsaPayment\Controller\Checkout;
 
-use BalloonGroup\Orders\Setup\Patch\Data\AddNewOrderStatusPatch;
-use BalloonGroup\Distributes\Helper\Data;
-use BalloonGroup\PsaPayment\Model\Payment;
+use Psa\Orders\Setup\Patch\Data\AddNewOrderStatusPatch;
+use Psa\Distributes\Helper\Data;
+use Psa\PsaPayment\Model\Payment;
 use Exception;
 use Magento\Checkout\Model\Session;
 use Magento\Framework\App\Action\Action;
@@ -17,7 +17,7 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Class Page - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Controller\Checkout
+ * @package  Psa\PsaPayment\Controller\Checkout
  */
 class Page extends Action implements HttpGetActionInterface
 {

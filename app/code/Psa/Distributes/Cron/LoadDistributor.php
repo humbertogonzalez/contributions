@@ -1,7 +1,7 @@
 <?php
-namespace BalloonGroup\Distributes\Cron;
+namespace Psa\Distributes\Cron;
 
-use BalloonGroup\Distributes\Helper\Dealers\Process;
+use Psa\Distributes\Helper\Dealers\Process;
 use Psr\Log\LoggerInterface;
 
 class LoadDistributor

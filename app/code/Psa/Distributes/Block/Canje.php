@@ -1,5 +1,5 @@
 <?php
-namespace BalloonGroup\Distributes\Block;
+namespace Psa\Distributes\Block;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Catalog\Block\Product\ListProduct;
@@ -33,14 +33,11 @@ class Canje extends Template
 
     public function getProductCollection(): Collection
     {
-
         return $this->_productCollectionFactory->create()->addAttributeToSelect('*')->load();
     }
 
     public function getAddToCartPostParams($product):array
     {   
-        
-
         return $this->listProductBlock->getAddToCartPostParams($product);
     }
 

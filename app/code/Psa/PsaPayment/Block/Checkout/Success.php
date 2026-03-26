@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Block\Checkout;
+namespace Psa\PsaPayment\Block\Checkout;
 
 use Exception;
 use Magento\Checkout\Model\Session;
@@ -16,7 +16,7 @@ use Magento\Store\Model\ScopeInterface;
 
 /**
  * Class Success - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Block\Checkout
+ * @package  Psa\PsaPayment\Block\Checkout
  */
 class Success extends \Magento\Framework\View\Element\Template
 {

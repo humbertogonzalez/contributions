@@ -15,6 +15,6 @@
         </arguments>
     </virtualType>
     <type name="Magento\Sales\Api\OrderRepositoryInterface">
-        <plugin name="psa_extension_attributes_add_order_interface" type="BalloonGroup\PsaPayment\Plugin\OrderRepositoryPlugin" />
+        <plugin name="psa_extension_attributes_add_order_interface" type="Psa\PsaPayment\Plugin\OrderRepositoryPlugin" />
     </type>
 </config>

@@ -1,9 +1,9 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Model;
+namespace Psa\PsaPayment\Model;
 
-use BalloonGroup\PsaPayment\Model\Config\Config;
-use BalloonGroup\PsaPayment\Model\Curl\RestClient;
+use Psa\PsaPayment\Model\Config\Config;
+use Psa\PsaPayment\Model\Curl\RestClient;
 use Exception;
 use Magento\Catalog\Helper\Image;
 use Magento\Checkout\Model\Session;
@@ -25,7 +25,7 @@ use Amasty\Storelocator\Model\ResourceModel\Location\CollectionFactory as Locati
 
 /**
  * Class Payment - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Model
+ * @package  Psa\PsaPayment\Model
  */
 class Payment extends \Magento\Payment\Model\Method\AbstractMethod
 {
@@ -58,7 +58,7 @@ class Payment extends \Magento\Payment\Model\Method\AbstractMethod
     protected $_canUseInternal = false;
     protected $_canFetchTransactionInfo = true;
     protected $_canReviewPayment = true;
-    protected $_infoBlockType = 'BalloonGroup\PsaPayment\Block\Info';
+    protected $_infoBlockType = 'Psa\PsaPayment\Block\Info';
     protected $_isInitializeNeeded = true;
 
     /**

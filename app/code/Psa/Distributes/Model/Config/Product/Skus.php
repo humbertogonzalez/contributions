@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Model\Config\Product;
+namespace Psa\Distributes\Model\Config\Product;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;

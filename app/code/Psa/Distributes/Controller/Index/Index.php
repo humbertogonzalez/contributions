@@ -1,10 +1,10 @@
 <?php
-namespace BalloonGroup\Distributes\Controller\Index;
+namespace Psa\Distributes\Controller\Index;
 
-use BalloonGroup\Distributes\Helper\Dealers\Process;
+use Psa\Distributes\Helper\Dealers\Process;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
-use BalloonGroup\Distributes\Helper\Order;
+use Psa\Distributes\Helper\Order;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

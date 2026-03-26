@@ -6,7 +6,7 @@
             <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages"/>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="BalloonGroup\PsaPayment\Block\Checkout\Success" name="atmpayment_checkout_success" cacheable="false"/>
+            <block class="Psa\PsaPayment\Block\Checkout\Success" name="atmpayment_checkout_success" cacheable="false"/>
         </referenceContainer>
     </body>
 </page>

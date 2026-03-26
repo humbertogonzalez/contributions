@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Observers;
+namespace Psa\Distributes\Observers;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\RequestInterface;

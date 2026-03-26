@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Controller\Change;
+namespace Psa\Distributes\Controller\Change;
 
 use Amasty\Storelocator\Model\LocationFactory;
 use Amasty\Storelocator\Model\ResourceModel\Location as LocationResource;
@@ -10,9 +10,9 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\App\RequestInterface;
-use BalloonGroup\Distributes\Helper\Data;
-use BalloonGroup\Distributes\Model\SerialFactory;
-use BalloonGroup\Distributes\Model\ResourceModel\Serial;
+use Psa\Distributes\Helper\Data;
+use Psa\Distributes\Model\SerialFactory;
+use Psa\Distributes\Model\ResourceModel\Serial;
 use Magento\Framework\View\LayoutInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Customer\Model\Session;

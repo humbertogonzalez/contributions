@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Controller\Cart;
+namespace Psa\Distributes\Controller\Cart;
 
 use Amasty\Cart\Helper\Data;
 use Amasty\Cart\Model\Cart\Add\GenerateResponse;
@@ -33,7 +33,7 @@ use Magento\Framework\Url\Helper\Data as UrlHelper;
 use Magento\Framework\DataObjectFactory as ObjectFactory;
 use Magento\GroupedProduct\Model\Product\Type\Grouped;
 use Magento\Customer\Model\Session as SessionCustomer;
-use BalloonGroup\Distributes\Model\SerialFactory;
+use Psa\Distributes\Model\SerialFactory;
 use Magento\Store\Model\StoreManagerInterface;
 
 class Add extends \Magento\Checkout\Controller\Cart\Add

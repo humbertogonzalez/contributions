@@ -1,5 +1,5 @@
 <?php
-namespace BalloonGroup\Distributes\Model\ResourceModel;
+namespace Psa\Distributes\Model\ResourceModel;
 
 
 class Serial extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb

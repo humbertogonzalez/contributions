@@ -1,9 +1,9 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Controller\Checkout;
+namespace Psa\PsaPayment\Controller\Checkout;
 
-use BalloonGroup\PsaPayment\Model\Config\Config;
-use BalloonGroup\PsaPayment\Model\Curl\RestClient;
+use Psa\PsaPayment\Model\Config\Config;
+use Psa\PsaPayment\Model\Curl\RestClient;
 use Exception;
 use Magento\Catalog\Controller\Product\View\ViewInterface;
 use Magento\Framework\App\Action\Action;
@@ -14,7 +14,7 @@ use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Message\ManagerInterface;
-use BalloonGroup\PsaPayment\Model\Payment;
+use Psa\PsaPayment\Model\Payment;
 use Psr\Log\LoggerInterface;
 
 class Pay extends Action implements ViewInterface

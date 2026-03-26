@@ -1,7 +1,7 @@
 <?php
-namespace BalloonGroup\Distributes\Helper\Dealers;
+namespace Psa\Distributes\Helper\Dealers;
 
-use BalloonGroup\Distributes\Helper\Data;
+use Psa\Distributes\Helper\Data;
 use Magento\Framework\App\Area;
 use Magento\Framework\Mail\Template\TransportBuilder;
 use Magento\Framework\Translate\Inline\StateInterface;

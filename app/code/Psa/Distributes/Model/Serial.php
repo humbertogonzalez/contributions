@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\Distributes\Model;
+namespace Psa\Distributes\Model;
 
 class Serial extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
@@ -12,7 +12,7 @@ class Serial extends \Magento\Framework\Model\AbstractModel implements \Magento\
 
 	protected function _construct()
 	{
-		$this->_init('BalloonGroup\Distributes\Model\ResourceModel\Serial');
+		$this->_init('Psa\Distributes\Model\ResourceModel\Serial');
 	}
 
 	public function getIdentities()

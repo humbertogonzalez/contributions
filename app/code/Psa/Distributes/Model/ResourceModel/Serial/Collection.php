@@ -1,5 +1,5 @@
 <?php
-namespace BalloonGroup\Distributes\Model\ResourceModel\Serial;
+namespace Psa\Distributes\Model\ResourceModel\Serial;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -14,7 +14,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 	 */
 	protected function _construct()
 	{
-		$this->_init('BalloonGroup\Distributes\Model\Serial', 'BalloonGroup\Distributes\Model\ResourceModel\Serial');
+		$this->_init('Psa\Distributes\Model\Serial', 'Psa\Distributes\Model\ResourceModel\Serial');
 	}
 
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Model\Config;
+namespace Psa\PsaPayment\Model\Config;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
  * Class Config - Brief description of class objective
- * @package  BalloonGroup\PsaPayment\Model\Config
+ * @package  Psa\PsaPayment\Model\Config
  */
 class Config
 {

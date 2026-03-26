@@ -1,6 +1,6 @@
 <?php
 
-namespace BalloonGroup\PsaPayment\Controller\Checkout;
+namespace Psa\PsaPayment\Controller\Checkout;
 
 use Magento\Catalog\Controller\Product\View\ViewInterface;
 use Magento\Framework\App\Action\Action;
@@ -10,7 +10,7 @@ use Magento\Framework\App\ResponseInterface;
 
 /**
  * Class Failure - Brief description of class objective
- * @package BalloonGroup\PsaPayment\Controller\Checkout
+ * @package Psa\PsaPayment\Controller\Checkout
  */
 class Failure extends Action implements ViewInterface
 {
